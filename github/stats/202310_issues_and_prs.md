@@ -1,5 +1,6 @@
 # GitHub issues and prs for October 2023
 |Id|Type|Repo|Title|Date|
+|--|--|--|--|--|
 |377|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) - Remove twitter - no longer supported in SWA](https://github.com/Azure-Samples/contoso-real-estate/issues/377)|10/3/2023, 9:08:44 PM|
 |378|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) Microsoft auth fails ](https://github.com/Azure-Samples/contoso-real-estate/issues/378)|10/3/2023, 9:10:01 PM|
 |379|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) Apple auth fails](https://github.com/Azure-Samples/contoso-real-estate/issues/379)|10/3/2023, 9:19:51 PM|
