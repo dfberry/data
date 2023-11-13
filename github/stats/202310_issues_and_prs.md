@@ -1,22 +1,24 @@
 # GitHub issues and prs for October 2023
-* [issue-377] [[Chore] (Portal) - Remove twitter - no longer supported in SWA](https://github.com/Azure-Samples/contoso-real-estate/issues/377) 2023-10-03T21:08:44Z
-* [issue-378] [[Chore] (Portal) Microsoft auth fails ](https://github.com/Azure-Samples/contoso-real-estate/issues/378) 2023-10-03T21:10:01Z
-* [issue-379] [[Chore] (Portal) Apple auth fails](https://github.com/Azure-Samples/contoso-real-estate/issues/379) 2023-10-03T21:19:51Z
-* [pr-380] [fix(portal): remove twitter social provider #377](https://github.com/Azure-Samples/contoso-real-estate/pull/380) 2023-10-04T00:06:51Z
-* [pr-381] [fix(portal): aad auth needs `aad` route as id](https://github.com/Azure-Samples/contoso-real-estate/pull/381) 2023-10-04T00:25:23Z
-* [pr-382] [fix(infra): leaked deployment secrets](https://github.com/Azure-Samples/contoso-real-estate/pull/382) 2023-10-04T15:17:23Z
-* [issue-383] [[Chore] (infra): update to azd dev container feature](https://github.com/Azure-Samples/contoso-real-estate/issues/383) 2023-10-04T22:43:26Z
-* [pr-384] [fix(infra): azd dev container feature](https://github.com/Azure-Samples/contoso-real-estate/pull/384) 2023-10-04T22:43:46Z
-* [issue-744] [Add model for /chat response ](https://github.com/Azure-Samples/azure-search-openai-demo/issues/744) 2023-10-05T21:11:29Z
-* [issue-12245] [List of supported language/framework generators from docker? ](https://github.com/swagger-api/swagger-codegen/issues/12245) 2023-10-14T19:45:13Z
-* [issue-385] [[Chore] - azd provision fails for Azure Database for PostgreSQL flexible server](https://github.com/Azure-Samples/contoso-real-estate/issues/385) 2023-10-16T17:00:04Z
-* [issue-386] [[Chore] npm install issues](https://github.com/Azure-Samples/contoso-real-estate/issues/386) 2023-10-18T17:56:31Z
-* [issue-3494] [Issue with listenercount - project fails to start](https://github.com/Azure/azure-functions-core-tools/issues/3494) 2023-10-18T19:37:02Z
-* [pr-86] [Tooltip for Developer settings](https://github.com/Azure-Samples/azure-search-openai-javascript/pull/86) 2023-10-20T15:31:18Z
-* [pr-19] [DevEx - Node.js](https://github.com/MicrosoftDocs/reusable-content/pull/19) 2023-10-20T17:35:38Z
-* [pr-87] [Tooltips fix for style and const](https://github.com/Azure-Samples/azure-search-openai-javascript/pull/87) 2023-10-20T21:31:18Z
-* [pr-388] [Fix(api): revert cloud build to api](https://github.com/Azure-Samples/contoso-real-estate/pull/388) 2023-10-23T17:56:36Z
-* [pr-856] [Feature (frontend): tooltips in developer settings for chat and oneshot](https://github.com/Azure-Samples/azure-search-openai-demo/pull/856) 2023-10-24T20:27:55Z
-* [pr-46] [Feature(frontend): tooltips + prettier](https://github.com/Azure-Samples/azure-search-openai-demo-java/pull/46) 2023-10-24T21:07:25Z
-* [issue-389] [[Chore] azd asks for stripe secrets and keys](https://github.com/Azure-Samples/contoso-real-estate/issues/389) 2023-10-31T14:12:23Z
-* [pr-391] [fix(infra): azd requires default values now to bypass user ask](https://github.com/Azure-Samples/contoso-real-estate/pull/391) 2023-10-31T15:35:52Z
+|Id|Type|Repo|Title|Date|
+|377|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) - Remove twitter - no longer supported in SWA](https://github.com/Azure-Samples/contoso-real-estate/issues/377)|10/3/2023, 9:08:44 PM|
+|378|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) Microsoft auth fails ](https://github.com/Azure-Samples/contoso-real-estate/issues/378)|10/3/2023, 9:10:01 PM|
+|379|issue|Azure-Samples/contoso-real-estate|[[Chore] (Portal) Apple auth fails](https://github.com/Azure-Samples/contoso-real-estate/issues/379)|10/3/2023, 9:19:51 PM|
+|380|pr|Azure-Samples/contoso-real-estate|[fix(portal): remove twitter social provider #377](https://github.com/Azure-Samples/contoso-real-estate/pull/380)|10/4/2023, 12:06:51 AM|
+|381|pr|Azure-Samples/contoso-real-estate|[fix(portal): aad auth needs `aad` route as id](https://github.com/Azure-Samples/contoso-real-estate/pull/381)|10/4/2023, 12:25:23 AM|
+|382|pr|Azure-Samples/contoso-real-estate|[fix(infra): leaked deployment secrets](https://github.com/Azure-Samples/contoso-real-estate/pull/382)|10/4/2023, 3:17:23 PM|
+|383|issue|Azure-Samples/contoso-real-estate|[[Chore] (infra): update to azd dev container feature](https://github.com/Azure-Samples/contoso-real-estate/issues/383)|10/4/2023, 10:43:26 PM|
+|384|pr|Azure-Samples/contoso-real-estate|[fix(infra): azd dev container feature](https://github.com/Azure-Samples/contoso-real-estate/pull/384)|10/4/2023, 10:43:46 PM|
+|744|issue|Azure-Samples/azure-search-openai-demo|[Add model for /chat response ](https://github.com/Azure-Samples/azure-search-openai-demo/issues/744)|10/5/2023, 9:11:29 PM|
+|12245|issue|swagger-api/swagger-codegen|[List of supported language/framework generators from docker? ](https://github.com/swagger-api/swagger-codegen/issues/12245)|10/14/2023, 7:45:13 PM|
+|385|issue|Azure-Samples/contoso-real-estate|[[Chore] - azd provision fails for Azure Database for PostgreSQL flexible server](https://github.com/Azure-Samples/contoso-real-estate/issues/385)|10/16/2023, 5:00:04 PM|
+|386|issue|Azure-Samples/contoso-real-estate|[[Chore] npm install issues](https://github.com/Azure-Samples/contoso-real-estate/issues/386)|10/18/2023, 5:56:31 PM|
+|3494|issue|Azure/azure-functions-core-tools|[Issue with listenercount - project fails to start](https://github.com/Azure/azure-functions-core-tools/issues/3494)|10/18/2023, 7:37:02 PM|
+|86|pr|Azure-Samples/azure-search-openai-javascript|[Tooltip for Developer settings](https://github.com/Azure-Samples/azure-search-openai-javascript/pull/86)|10/20/2023, 3:31:18 PM|
+|19|pr|MicrosoftDocs/reusable-content|[DevEx - Node.js](https://github.com/MicrosoftDocs/reusable-content/pull/19)|10/20/2023, 5:35:38 PM|
+|87|pr|Azure-Samples/azure-search-openai-javascript|[Tooltips fix for style and const](https://github.com/Azure-Samples/azure-search-openai-javascript/pull/87)|10/20/2023, 9:31:18 PM|
+|388|pr|Azure-Samples/contoso-real-estate|[Fix(api): revert cloud build to api](https://github.com/Azure-Samples/contoso-real-estate/pull/388)|10/23/2023, 5:56:36 PM|
+|856|pr|Azure-Samples/azure-search-openai-demo|[Feature (frontend): tooltips in developer settings for chat and oneshot](https://github.com/Azure-Samples/azure-search-openai-demo/pull/856)|10/24/2023, 8:27:55 PM|
+|46|pr|Azure-Samples/azure-search-openai-demo-java|[Feature(frontend): tooltips + prettier](https://github.com/Azure-Samples/azure-search-openai-demo-java/pull/46)|10/24/2023, 9:07:25 PM|
+|389|issue|Azure-Samples/contoso-real-estate|[[Chore] azd asks for stripe secrets and keys](https://github.com/Azure-Samples/contoso-real-estate/issues/389)|10/31/2023, 2:12:23 PM|
+|391|pr|Azure-Samples/contoso-real-estate|[fix(infra): azd requires default values now to bypass user ask](https://github.com/Azure-Samples/contoso-real-estate/pull/391)|10/31/2023, 3:35:52 PM|
+
