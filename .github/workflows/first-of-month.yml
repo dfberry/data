@@ -58,8 +58,9 @@ jobs:
         cd automation/first-of-month
         npm ci
         ls -al
-        node index.js > data/${{ steps.date.outputs.date }}_issues_and_prs.md
+        node index.js > data/output.md
         ls -al data
+        cat data/output.md
         cp data/output.md ../../github/stats/${{ steps.date.outputs.date }}_issues_and_prs.md
         ls -al ../../github/stats
         
