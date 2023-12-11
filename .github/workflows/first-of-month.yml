@@ -23,6 +23,8 @@ jobs:
 
     - name: Create new branch
       run: |
+        git config --global user.email "dinaberry@outlook.com"
+        git config --global user.name "dfberry"
         git checkout -b first-of-month-issues-and-prs
         
 
