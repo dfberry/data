@@ -9,8 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env: 
+      CI_COMMIT_MESSAGE: CI EOM Issues and PRs
+      CI_COMMIT_AUTHOR: CI with PAT
+
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
     - name: Get date
       id: date
