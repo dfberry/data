@@ -1,0 +1,52 @@
+name: "1st of Month: Issues & PRs"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Get date
+      id: date
+      run: echo "::set-output name=date::$(date +'%y%m%d')"
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Create new branch
+      run: |
+        git checkout -b first-of-month-issues-and-prs
+        
+
+    - name: Install and run 
+      run: |
+        cd automation/first-of-month
+        npm ci
+        node index.js > ../../github/stats/${{ steps.date.outputs.date }}_issues_and_prs.md
+        
+    - name: Commit changes
+      run: |
+        git add .
+        git commit -m "$(date +'%B %Y') issues and PRs"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: first-of-month-issues-and-prs
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        base: main
+        branch: first-of-month-issues-and-prs
+        title: "$(date +'%Y-%m-%d') Issues and PRs"
