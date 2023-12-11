@@ -11,9 +11,35 @@ jobs:
 
     env: 
       CI_COMMIT_MESSAGE: CI EOM Issues and PRs
-      CI_COMMIT_AUTHOR: CI with PAT
+      CI_COMMIT_AUTHOR: CI dfberry pat
 
     steps:
+
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Dump job context
+      env:
+        JOB_CONTEXT: ${{ toJson(job) }}
+      run: echo "$JOB_CONTEXT"
+    - name: Dump steps context
+      env:
+        STEPS_CONTEXT: ${{ toJson(steps) }}
+      run: echo "$STEPS_CONTEXT"
+    - name: Dump runner context
+      env:
+        RUNNER_CONTEXT: ${{ toJson(runner) }}
+      run: echo "$RUNNER_CONTEXT"
+    - name: Dump strategy context
+      env:
+        STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+      run: echo "$STRATEGY_CONTEXT"
+    - name: Dump matrix context
+      env:
+        MATRIX_CONTEXT: ${{ toJson(matrix) }}
+      run: echo "$MATRIX_CONTEXT"
+
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
@@ -26,26 +52,18 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '18'
-
-    - name: Create new branch
-      run: |
-        git checkout -b first-of-month-issues-and-prs
-        git push --set-upstream origin first-of-month-issues-and-prs
-        
+      
     - name: Install and run 
       run: |
         cd automation/first-of-month
         npm ci
         node index.js > ../../github/stats/${{ steps.date.outputs.date }}_issues_and_prs.md
         
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "$(date +'%B %Y') issues and PRs"
-
-    # Commit and push all changed files. 
-    # Must only affect files that are listed in "paths-ignore".
-    # https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html#example-1
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      # Only run on main branch push (e.g. after pull request merge).
+      if: github.event_name == 'push'
       run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "dfberry@users.noreply.github.com"
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
         git push
