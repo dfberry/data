@@ -23,11 +23,10 @@ jobs:
 
     - name: Create new branch
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "username@users.noreply.github.com"
         git checkout -b first-of-month-issues-and-prs
         
-
     - name: Install and run 
       run: |
         cd automation/first-of-month
@@ -39,16 +38,9 @@ jobs:
         git add .
         git commit -m "$(date +'%B %Y') issues and PRs"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: first-of-month-issues-and-prs
-
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        base: main
-        branch: first-of-month-issues-and-prs
-        title: "$(date +'%Y-%m-%d') Issues and PRs"
+    # Commit and push all changed files. 
+    # Must only affect files that are listed in "paths-ignore".
+    # https://joht.github.io/johtizen/build/2022/01/20/github-actions-push-into-repository.html#example-1
+    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      run: |
+        git push
