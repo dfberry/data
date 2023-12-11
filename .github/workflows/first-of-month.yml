@@ -52,12 +52,16 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '18'
-      
-    - name: Install and run 
+
+    - name: Install
       run: |
         cd automation/first-of-month
         npm ci
-        node index.js > ../../github/stats/${{ steps.date.outputs.date }}_issues_and_prs.md
+        ls -al
+        node index.js > data/${{ steps.date.outputs.date }}_issues_and_prs.md
+        ls -al data
+        cp data/output.md ../../github/stats/${{ steps.date.outputs.date }}_issues_and_prs.md
+        ls -al ../../github/stats
         
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       # Only run on main branch push (e.g. after pull request merge).
