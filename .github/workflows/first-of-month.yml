@@ -48,9 +48,12 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%y%m%d')"
 
-    - name: Get date - previous month
-      id: datelastmonth
-      run: echo "::set-output name=date::$(date -d 'last month' +'%y%m%d')"
+    - name: Get date - last month
+      id: date2
+      run: echo "::set-output name=date2::$(date +'%y%m%d' -d 'last month')"
+    - name: Output date - last month
+      run: |
+        echo "${{ steps.date2.outputs.date2 }}"
 
     - name: Use Node.js
       uses: actions/setup-node@v2
@@ -65,7 +68,7 @@ jobs:
         node index.js > data/output.md
         ls -al data
         cat data/output.md
-        cp data/output.md ../../github/stats/${{ steps.date.outputs.datelastmonth }}_issues_and_prs.md
+        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
         ls -al ../../github/stats
         
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
@@ -73,7 +76,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{ steps.date.outputs.datelastmonth }}_issues_and_prs.md
+        git add github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
