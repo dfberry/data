@@ -46,6 +46,10 @@ jobs:
 
     - name: Get date - last saturday
       id: date
+      run: echo "$(date -d 'last Saturday' +'%y%m%d')"
+
+    - name: Get date - last saturday
+      id: date
       run: echo "::set-output name=date::$(date -d 'last Saturday' +'%y%m%d')"
 
     - name: Get date - two Saturdays ago
