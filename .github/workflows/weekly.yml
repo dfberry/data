@@ -44,14 +44,14 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
-    - name: Get date - this month
+    - name: Get date - last saturday
       id: date
-      run: echo "::set-output name=date::$(date +'%y%m%d')"
+      run: echo "::set-output name=date::$(date -d 'last Saturday' +'%y%m%d')"
 
-    - name: Get date - last month
+    - name: Get date - two Saturdays ago
       id: date2
-      run: echo "::set-output name=date2::$(date +'%Y%m' -d 'last month')"
-    - name: Output date - last month
+      run: echo "::set-output name=date2::$(date -d '2 saturday ago' +'%Y%m%d')"
+    - name: Output date - two Saturdays ago
       run: |
         echo "${{ steps.date2.outputs.date2 }}"
 
@@ -62,7 +62,7 @@ jobs:
 
     - name: Install
       run: |
-        cd automation/first-of-month
+        cd automation/weekly
         npm ci
         ls -al
         node index.js > data/output.md
