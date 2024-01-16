@@ -1,0 +1,86 @@
+name: "Weekly: Issues & PRs"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env: 
+      CI_COMMIT_MESSAGE: CI EOM Issues and PRs
+      CI_COMMIT_AUTHOR: CI dfberry pat
+
+    steps:
+
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Dump job context
+      env:
+        JOB_CONTEXT: ${{ toJson(job) }}
+      run: echo "$JOB_CONTEXT"
+    - name: Dump steps context
+      env:
+        STEPS_CONTEXT: ${{ toJson(steps) }}
+      run: echo "$STEPS_CONTEXT"
+    - name: Dump runner context
+      env:
+        RUNNER_CONTEXT: ${{ toJson(runner) }}
+      run: echo "$RUNNER_CONTEXT"
+    - name: Dump strategy context
+      env:
+        STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+      run: echo "$STRATEGY_CONTEXT"
+    - name: Dump matrix context
+      env:
+        MATRIX_CONTEXT: ${{ toJson(matrix) }}
+      run: echo "$MATRIX_CONTEXT"
+
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+
+    - name: Get date - this month
+      id: date
+      run: echo "::set-output name=date::$(date +'%y%m%d')"
+
+    - name: Get date - last month
+      id: date2
+      run: echo "::set-output name=date2::$(date +'%Y%m' -d 'last month')"
+    - name: Output date - last month
+      run: |
+        echo "${{ steps.date2.outputs.date2 }}"
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install
+      run: |
+        cd automation/first-of-month
+        npm ci
+        ls -al
+        node index.js > data/output.md
+        ls -al data
+        cat data/output.md
+        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
+        ls -al ../../github/stats
+        
+    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      # Only run on main branch push (e.g. after pull request merge).
+      run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "dfberry@users.noreply.github.com"
+        git add github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+        branch: main
