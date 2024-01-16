@@ -45,19 +45,26 @@ jobs:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
     - name: Get date - last saturday
-      id: date
+      id: date-echo-1
       run: echo "$(date -d 'last Saturday' +'%y%m%d')"
 
+    - name: Get date 2 - two Saturdays ago
+      id: date-echo-1
+      run: echo "$(date -d '2 saturday ago' +'%Y%m%d')"
+
     - name: Get date - last saturday
-      id: date-echo
+      id: date1
       run: echo "::set-output name=date::$(date -d 'last Saturday' +'%y%m%d')"
+    - name: Output date - last saturday
+      run: |
+        echo "${{ steps.date1.outputs.date }}"
 
     - name: Get date - two Saturdays ago
       id: date2
-      run: echo "::set-output name=date2::$(date -d '2 saturday ago' +'%Y%m%d')"
+      run: echo "::set-output name=date::$(date -d '2 saturday ago' +'%Y%m%d')"
     - name: Output date - two Saturdays ago
       run: |
-        echo "${{ steps.date2.outputs.date2 }}"
+        echo "${{ steps.date2.outputs.date }}"
 
     - name: Use Node.js
       uses: actions/setup-node@v2
@@ -72,7 +79,7 @@ jobs:
         node index.js > data/output.md
         ls -al data
         cat data/output.md
-        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
+        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
         ls -al ../../github/stats
         
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
@@ -80,7 +87,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
+        git add github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
