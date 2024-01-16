@@ -49,7 +49,7 @@ jobs:
       run: echo "$(date -d 'last Saturday' +'%y%m%d')"
 
     - name: Get date 2 - two Saturdays ago
-      id: date-echo-1
+      id: date-echo-2
       run: echo "$(date -d '2 saturday ago' +'%Y%m%d')"
 
     - name: Get date - last saturday
