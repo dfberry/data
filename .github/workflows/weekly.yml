@@ -50,7 +50,7 @@ jobs:
 
     - name: Get date 2 - two Saturdays ago
       id: date-echo-2
-      run: echo "$(date -d '2 saturday ago' +'%Y%m%d')"
+      run: echo "$(date -d 'last Saturday - 1 week' +'%Y%m%d')"
 
     - name: Get date - last saturday
       id: date1
@@ -61,7 +61,7 @@ jobs:
 
     - name: Get date - two Saturdays ago
       id: date2
-      run: echo "::set-output name=date::$(date -d '2 saturday ago' +'%Y%m%d')"
+      run: echo "::set-output name=date::$(date -d 'last Saturday - 1 week' +'%Y%m%d')"
     - name: Output date - two Saturdays ago
       run: |
         echo "${{ steps.date2.outputs.date }}"
