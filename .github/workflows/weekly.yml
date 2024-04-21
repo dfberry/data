@@ -71,7 +71,7 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Install
+    - name: Issues and PRs to PG
       run: |
         cd automation/weekly
         npm ci
@@ -81,13 +81,26 @@ jobs:
         cat data/output.md
         cp data/output.md ../../github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
         ls -al ../../github/stats
-        
+
+    - name: Issues and PRs for me
+      run: |
+        cd automation/issues
+        npm ci
+        ls -al
+        node --loader ts-node/esm src/index.ts > data/repos_issues_output.md
+        ls -al data
+        cat data/repos_issues_output.md
+        cp data/repos_issues_output.md ../../github/stats/${{ steps.date2.outputs.date }}_repos_issues_and_prs.md
+        ls -al ../../github/stats
+
+
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       # Only run on main branch push (e.g. after pull request merge).
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
         git add github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
+        git add github/stats/${{ steps.date2.outputs.date }}repos_issues_and_prs.md
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
