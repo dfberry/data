@@ -44,18 +44,6 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
-    - name: Get date - 2 Days Ago
-      id: date-echo-1
-      run: |
-        echo "PREVIOUS_DAYS_BEGIN=$(date -d '2 days ago' +'%y%m%d')" >> $GITHUB_ENV
-        echo $PREVIOUS_DAYS_BEGIN
-
-    - name: Get date - 1 Day Ago
-      id: date-echo-2
-      run: |
-        echo "PREVIOUS_DAYS_END=$(date -d '1 day ago' +'%Y%m%d')" >> $GITHUB_ENV
-        echo $PREVIOUS_DAYS_END
-
     - name: Issues and PRs for me
       run: |
         cd automation/issues

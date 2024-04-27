@@ -15,7 +15,7 @@ async function loadRepos(): Promise<string[]> {
   const data = await readFile(filePath, 'utf8');
 
   const repos = JSON.parse(data);
-  console.log(repos);
+
   return repos;
 }
 async function loadUsers(): Promise<string[]> {
@@ -24,7 +24,7 @@ async function loadUsers(): Promise<string[]> {
   const data = await readFile(filePath, 'utf8');
 
   const users = JSON.parse(data);
-  console.log(users);
+
   return users;
 }
 
@@ -192,8 +192,9 @@ const repos: string[] = await loadRepos();
 const users: string[] = await loadUsers();
 
 // Get the dates
-const previousDaysBegin = (process.env.PREVIOUS_DAYS_BEGIN as string) || '8';
+const previousDaysBegin = (process.env.PREVIOUS_DAYS_BEGIN as string) || '2';
 const previousDaysEnd = (process.env.PREVIOUS_DAYS_END as string) || '1';
+
 const dates = getDates(previousDaysBegin, previousDaysEnd);
 
 // Get data and transform it

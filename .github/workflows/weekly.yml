@@ -82,6 +82,18 @@ jobs:
         cp data/output.md ../../github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
         ls -al ../../github/stats
 
+    - name: Get My issues and PRs date - 8 Days Ago
+      id: date-echo-1
+      run: |
+        echo "PREVIOUS_DAYS_BEGIN=8" >> $GITHUB_ENV
+        echo $PREVIOUS_DAYS_BEGIN
+
+    - name: Get My issues and PRs  - 1 Day Ago
+      id: date-echo-2
+      run: |
+        echo "PREVIOUS_DAYS_END=1" >> $GITHUB_ENV
+        echo $PREVIOUS_DAYS_END
+
     - name: Issues and PRs for me
       run: |
         cd automation/issues

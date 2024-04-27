@@ -31,6 +31,7 @@ function convertIssueToResult(issue) {
 }
 async function fetchRepoData(url) {
     const response = await fetch(url);
+    console.log(`fetchRepoData: ${url}`);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -42,6 +43,7 @@ async function fetchRepoData(url) {
 }
 async function fetchIssues(url) {
     const response = await fetch(url);
+    console.log(`fetchIssues: ${url}`);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -133,7 +135,7 @@ const repos = await loadRepos();
 // Load list of users
 const users = await loadUsers();
 // Get the dates
-const previousDaysBegin = process.env.PREVIOUS_DAYS_BEGIN || '8';
+const previousDaysBegin = process.env.PREVIOUS_DAYS_BEGIN || '2';
 const previousDaysEnd = process.env.PREVIOUS_DAYS_END || '1';
 const dates = getDates(previousDaysBegin, previousDaysEnd);
 // Get data and transform it
@@ -147,22 +149,4 @@ for await (const user of users) {
     assignedIssuesAndPrs.push(...userIssues);
 }
 printData(dates.formatBeginDate, dates.formatEndDate, 'Assigned - GitHub issues and prs', assignedIssuesAndPrs);
-/* // Present data
-console.log(`# GitHub issues and prs from ${dates.formatBeginDate} to ${dates.formatEndDate}`);
-console.log(`|Id|Type|Repo|User|Title|Date|`);
-console.log(`|--|--|--|--|--|--|`);
-
-issuesAndPrs.forEach((item: Result) => {
-
-    // split url into its parts
-    const urlParts = item.url.split('/');
-    const owner = urlParts[3];
-    const repo = urlParts[4];
-    const user = item.user;
-
-    // remove time from date
-    item.date_created = item.date_created.split(',')[0];
-
-    console.log(`|${item.id}|${item.type}|${owner}/${repo}|${user}| [${item.title}](${item.url})|${item.date_created}|`)
-}); */
 //# sourceMappingURL=index.js.map
