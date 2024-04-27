@@ -5,6 +5,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
 
+env:
+  DRAFT_FILE: assigned_issues_output
+  REPORT_NAME: daily_issues_and_prs
+  REPORT_EXTENSION: .md
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,15 +49,22 @@ jobs:
       with:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
+    - name: Get date - Yesterday
+      id: date_yesterday
+      run: echo "::set-output name=date::$(date -d 'yesterday' +'%Y%m%d')"
+    - name: Output date - Yesterday
+      run: |
+        echo "${{ steps.date_yesterday.outputs.date }}"
+
     - name: Issues and PRs for me
       run: |
         cd automation/issues
         npm ci
         ls -al
-        node --loader ts-node/esm src/index.ts > data/repos_issues_output.md
+        node --loader ts-node/esm src/index.ts > data/${{ DRAFT_FILE }}.md
         ls -al data
-        cat data/repos_issues_output.md
-        cp data/repos_issues_output.md ../../github/stats/${{ steps.date2.outputs.date }}_repos_issues_and_prs.md
+        cat data/${{ DRAFT_FILE }}.md
+        cp data/${{ DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}${{ REPORT_NAME }}.${{ REPORT_EXTENSION}}
         ls -al ../../github/stats
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
@@ -60,8 +72,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{ steps.date2.outputs.date }}_daily_issues_and_prs.md
-        git add github/stats/${{ steps.date2.outputs.date }}_daily_repos_issues_and_prs.md
+        git add github/stats/${{  steps.date_yesterday.outputs.date }}${{ REPORT_NAME }}.${{ REPORT_EXTENSION}}
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
