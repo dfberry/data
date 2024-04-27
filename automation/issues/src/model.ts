@@ -2,6 +2,7 @@ export type AppResult = {
   date_created: string;
   type: string;
   id: number;
+  issue_age: number;
   repo: string;
   title: string;
   user: string;

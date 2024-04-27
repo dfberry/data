@@ -62,13 +62,13 @@ jobs:
 
     - name: Install
       run: |
-        cd automation/first-of-month
+        cd automation/issues
         npm ci
         ls -al
-        node index.js > data/output.md
+        node --loader ts-node/esm src/index.ts LAST_MONTH > data/${{ env.DRAFT_FILE }}.md
         ls -al data
-        cat data/output.md
-        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date2 }}_issues_and_prs.md
+        cat data/${{ env.DRAFT_FILE }}.md
+        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         ls -al ../../github/stats
         
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)

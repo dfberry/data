@@ -16,9 +16,20 @@ async function loadUsers() {
     const users = JSON.parse(data);
     return users;
 }
+function getArg() {
+    const args = process.argv;
+    const dateRange = args[2].toUpperCase() || 'MONTH';
+    if (!['LAST_MONTH', 'LAST_WEEK', 'LAST_DAY'].includes(dateRange)) {
+        throw new Error('Invalid period. Expected LAST_MONTH, LAST_WEEK, or LAST_DAY');
+    }
+    return dateRange;
+}
 function convertIssueToResult(issue) {
     return {
         date_created: issue.created_at,
+        // show how old an issue is between the created_at date and the current date
+        issue_age: Math.floor((new Date().getTime() - new Date(issue.created_at).getTime()) /
+            (1000 * 60 * 60 * 24)),
         type: issue.state,
         id: issue.id,
         repo: issue.repository_url,
@@ -76,22 +87,32 @@ async function processUserIssues(beginDate, endDate, user) {
     }
     return results;
 }
-function getDates(beginDays, endDays) {
-    // Parse beginDays and endDays as integers
-    const beginDaysInt = parseInt(beginDays, 10);
-    const endDaysInt = parseInt(endDays, 10);
-    // Check if beginDays and endDays are valid integers
-    if (isNaN(beginDaysInt) || isNaN(endDaysInt)) {
-        throw new Error('beginDays and endDays must be valid integers');
-    }
+function getDates(period) {
     // Get the current date
-    const currentDate = new Date();
-    // Get the date of beginDays days ago
-    const beginDate = new Date();
-    beginDate.setDate(currentDate.getDate() - parseInt(beginDays));
-    // Get the date of endDays days ago
-    const endDate = new Date();
-    endDate.setDate(currentDate.getDate() - parseInt(endDays));
+    const today = new Date();
+    // Initialize beginDate and endDate
+    let beginDate;
+    let endDate;
+    switch (period) {
+        case 'LAST_MONTH':
+            beginDate = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+            endDate = new Date(today.getFullYear(), today.getMonth(), 0);
+            break;
+        case 'LAST_WEEK':
+            beginDate = new Date(today.getTime());
+            beginDate.setDate(today.getDate() - 7);
+            endDate = new Date(today.getTime());
+            endDate.setDate(today.getDate() - 1);
+            break;
+        case 'LAST_DAY':
+            beginDate = new Date(today.getTime());
+            beginDate.setDate(today.getDate() - 1);
+            endDate = new Date(today.getTime());
+            endDate.setDate(today.getDate() - 1);
+            break;
+        default:
+            throw new Error('Invalid period. Expected LAST_MONTH, LAST_WEEK, or LAST_DAY');
+    }
     // Format the dates in YYYY-MM-DD format
     const beginDateString = beginDate.toISOString().split('T')[0];
     const endDateString = endDate.toISOString().split('T')[0];
@@ -113,8 +134,8 @@ function getDates(beginDays, endDays) {
 }
 function printData(beginDate, endDate, reportName, data) {
     console.log(`# ${reportName} from ${beginDate} to ${endDate}`);
-    console.log(`|Id|Type|Repo|User|Title|Date|`);
-    console.log(`|--|--|--|--|--|--|`);
+    console.log(`|Id|Type|Repo|User|Title|Date|Age|`);
+    console.log(`|--|--|--|--|--|--|--|`);
     data.forEach((item) => {
         // split url into its parts
         const urlParts = item.url.split('/');
@@ -123,17 +144,15 @@ function printData(beginDate, endDate, reportName, data) {
         const user = item.user;
         // remove time from date
         item.date_created = item.date_created.split(',')[0];
-        console.log(`|${item.id}|${item.type}|${owner}/${repo}|${user}| [${item.title}](${item.url})|${item.date_created}|`);
+        console.log(`|${item.id}|${item.type}|${owner}/${repo}|${user}| [${item.title}](${item.url})|${item.date_created}|${item.issue_age}|`);
     });
 }
 // Load list of repos
 const repos = await loadRepos();
 // Load list of users
 const users = await loadUsers();
-// Get the dates
-const previousDaysBegin = process.env.PREVIOUS_DAYS_BEGIN || '2';
-const previousDaysEnd = process.env.PREVIOUS_DAYS_END || '1';
-const dates = getDates(previousDaysBegin, previousDaysEnd);
+const dateRangeSelector = getArg();
+const dates = getDates(dateRangeSelector);
 // Get data and transform it
 const issuesAndPrs = await processRepos(dates.beginDateString, dates.endDateString, repos);
 printData(dates.formatBeginDate, dates.formatEndDate, 'Repos - GitHub issues and prs', issuesAndPrs);

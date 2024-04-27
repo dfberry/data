@@ -27,10 +27,29 @@ async function loadUsers(): Promise<string[]> {
 
   return users;
 }
+function getArg() {
+  const args = process.argv;
+  const dateRange = args[2].toUpperCase() || 'MONTH';
+
+  if (!['LAST_MONTH', 'LAST_WEEK', 'LAST_DAY'].includes(dateRange)) {
+    throw new Error(
+      'Invalid period. Expected LAST_MONTH, LAST_WEEK, or LAST_DAY'
+    );
+  }
+
+  return dateRange;
+}
 
 function convertIssueToResult(issue: GitHubIssue): AppResult {
   return {
     date_created: issue.created_at,
+
+    // show how old an issue is between the created_at date and the current date
+    issue_age: Math.floor(
+      (new Date().getTime() - new Date(issue.created_at).getTime()) /
+        (1000 * 60 * 60 * 24)
+    ),
+
     type: issue.state,
     id: issue.id,
     repo: issue.repository_url,
@@ -117,26 +136,37 @@ async function processUserIssues(
 
   return results;
 }
-function getDates(beginDays: string, endDays: string) {
-  // Parse beginDays and endDays as integers
-  const beginDaysInt = parseInt(beginDays, 10);
-  const endDaysInt = parseInt(endDays, 10);
 
-  // Check if beginDays and endDays are valid integers
-  if (isNaN(beginDaysInt) || isNaN(endDaysInt)) {
-    throw new Error('beginDays and endDays must be valid integers');
-  }
-
+function getDates(period: string) {
   // Get the current date
-  const currentDate = new Date();
+  const today: Date = new Date();
 
-  // Get the date of beginDays days ago
-  const beginDate = new Date();
-  beginDate.setDate(currentDate.getDate() - parseInt(beginDays));
+  // Initialize beginDate and endDate
+  let beginDate: Date;
+  let endDate: Date;
 
-  // Get the date of endDays days ago
-  const endDate = new Date();
-  endDate.setDate(currentDate.getDate() - parseInt(endDays));
+  switch (period) {
+    case 'LAST_MONTH':
+      beginDate = new Date(today.getFullYear(), today.getMonth() - 1, 1);
+      endDate = new Date(today.getFullYear(), today.getMonth(), 0);
+      break;
+    case 'LAST_WEEK':
+      beginDate = new Date(today.getTime());
+      beginDate.setDate(today.getDate() - 7);
+      endDate = new Date(today.getTime());
+      endDate.setDate(today.getDate() - 1);
+      break;
+    case 'LAST_DAY':
+      beginDate = new Date(today.getTime());
+      beginDate.setDate(today.getDate() - 1);
+      endDate = new Date(today.getTime());
+      endDate.setDate(today.getDate() - 1);
+      break;
+    default:
+      throw new Error(
+        'Invalid period. Expected LAST_MONTH, LAST_WEEK, or LAST_DAY'
+      );
+  }
 
   // Format the dates in YYYY-MM-DD format
   const beginDateString = beginDate.toISOString().split('T')[0];
@@ -159,6 +189,7 @@ function getDates(beginDays: string, endDays: string) {
     endDateString
   };
 }
+
 function printData(
   beginDate: string,
   endDate: string,
@@ -166,8 +197,8 @@ function printData(
   data: AppResult[]
 ) {
   console.log(`# ${reportName} from ${beginDate} to ${endDate}`);
-  console.log(`|Id|Type|Repo|User|Title|Date|`);
-  console.log(`|--|--|--|--|--|--|`);
+  console.log(`|Id|Type|Repo|User|Title|Date|Age|`);
+  console.log(`|--|--|--|--|--|--|--|`);
 
   data.forEach((item: AppResult) => {
     // split url into its parts
@@ -180,7 +211,7 @@ function printData(
     item.date_created = item.date_created.split(',')[0];
 
     console.log(
-      `|${item.id}|${item.type}|${owner}/${repo}|${user}| [${item.title}](${item.url})|${item.date_created}|`
+      `|${item.id}|${item.type}|${owner}/${repo}|${user}| [${item.title}](${item.url})|${item.date_created}|${item.issue_age}|`
     );
   });
 }
@@ -191,11 +222,8 @@ const repos: string[] = await loadRepos();
 // Load list of users
 const users: string[] = await loadUsers();
 
-// Get the dates
-const previousDaysBegin = (process.env.PREVIOUS_DAYS_BEGIN as string) || '2';
-const previousDaysEnd = (process.env.PREVIOUS_DAYS_END as string) || '1';
-
-const dates = getDates(previousDaysBegin, previousDaysEnd);
+const dateRangeSelector = getArg();
+const dates = getDates(dateRangeSelector);
 
 // Get data and transform it
 const issuesAndPrs = await processRepos(

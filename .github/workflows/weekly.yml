@@ -73,14 +73,15 @@ jobs:
 
     - name: Issues and PRs to PG
       run: |
-        cd automation/weekly
+        cd automation/issues
         npm ci
         ls -al
-        node index.js > data/output.md
+        node --loader ts-node/esm src/index.ts LAST_WEEK > data/${{ env.DRAFT_FILE }}.md
         ls -al data
-        cat data/output.md
-        cp data/output.md ../../github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
+        cat data/${{ env.DRAFT_FILE }}.md
+        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         ls -al ../../github/stats
+
 
     - name: Get My issues and PRs date - 8 Days Ago
       id: date-echo-1
