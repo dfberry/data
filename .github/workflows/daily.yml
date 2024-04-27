@@ -64,7 +64,7 @@ jobs:
         node --loader ts-node/esm src/index.ts > data/${{ env.DRAFT_FILE }}.md
         ls -al data
         cat data/${{ env.DRAFT_FILE }}.md
-        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
+        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         ls -al ../../github/stats
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
@@ -72,7 +72,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{  steps.date_yesterday.outputs.date }}-${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
+        git add github/stats/${{  steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
