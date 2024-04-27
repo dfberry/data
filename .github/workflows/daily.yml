@@ -8,7 +8,7 @@ on:
 env:
   DRAFT_FILE: assigned_issues_output
   REPORT_NAME: daily_issues_and_prs
-  REPORT_EXTENSION: .md
+  REPORT_EXTENSION: md
 
 jobs:
   build:
@@ -56,12 +56,17 @@ jobs:
       run: |
         echo "${{ steps.date_yesterday.outputs.date }}"
 
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
     - name: Issues and PRs for me
       run: |
         cd automation/issues
         npm ci
         ls -al
-        node --loader ts-node/esm src/index.ts LAST_DAY > data/${{ env.DRAFT_FILE }}.md
+        node --loader ts-node/esm src/index.ts LAST_DAY > data/${{ env.DRAFT_FILE }}.${{ env.REPORT_EXTENSION}}
         ls -al data
         cat data/${{ env.DRAFT_FILE }}.md
         cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
@@ -72,7 +77,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{  steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
+        git add github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes

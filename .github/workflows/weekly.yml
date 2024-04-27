@@ -5,6 +5,12 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
+env:
+  DRAFT_FILE: assigned_issues_output
+  REPORT_NAME: weekly_issues_and_prs
+  REPORT_EXTENSION: md
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -76,34 +82,10 @@ jobs:
         cd automation/issues
         npm ci
         ls -al
-        node --loader ts-node/esm src/index.ts LAST_WEEK > data/${{ env.DRAFT_FILE }}.md
+        node --loader ts-node/esm src/index.ts LAST_WEEK > data/${{ env.DRAFT_FILE }}.${{ env.REPORT_EXTENSION}}
         ls -al data
         cat data/${{ env.DRAFT_FILE }}.md
-        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
-        ls -al ../../github/stats
-
-
-    - name: Get My issues and PRs date - 8 Days Ago
-      id: date-echo-1
-      run: |
-        echo "PREVIOUS_DAYS_BEGIN=8" >> $GITHUB_ENV
-        echo $PREVIOUS_DAYS_BEGIN
-
-    - name: Get My issues and PRs  - 1 Day Ago
-      id: date-echo-2
-      run: |
-        echo "PREVIOUS_DAYS_END=1" >> $GITHUB_ENV
-        echo $PREVIOUS_DAYS_END
-
-    - name: Issues and PRs for me
-      run: |
-        cd automation/issues
-        npm ci
-        ls -al
-        node --loader ts-node/esm src/index.ts > data/repos_issues_output.md
-        ls -al data
-        cat data/repos_issues_output.md
-        cp data/repos_issues_output.md ../../github/stats/${{ steps.date2.outputs.date }}_repos_issues_and_prs.md
+        cp data/${{ env.DRAFT_FILE }}.md ../../github/stats/${{ steps.date2.outputs.date2 }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         ls -al ../../github/stats
 
 
@@ -112,8 +94,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{ steps.date2.outputs.date }}_issues_and_prs.md
-        git add github/stats/${{ steps.date2.outputs.date }}_repos_issues_and_prs.md
+        git add github/stats/${{ steps.date2.outputs.date2 }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
