@@ -1,0 +1,83 @@
+name: "Daily: Issues & PRs"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env: 
+      CI_COMMIT_MESSAGE: CI EOM Issues and PRs
+      CI_COMMIT_AUTHOR: CI dfberry pat
+
+    steps:
+
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+    - name: Dump job context
+      env:
+        JOB_CONTEXT: ${{ toJson(job) }}
+      run: echo "$JOB_CONTEXT"
+    - name: Dump steps context
+      env:
+        STEPS_CONTEXT: ${{ toJson(steps) }}
+      run: echo "$STEPS_CONTEXT"
+    - name: Dump runner context
+      env:
+        RUNNER_CONTEXT: ${{ toJson(runner) }}
+      run: echo "$RUNNER_CONTEXT"
+    - name: Dump strategy context
+      env:
+        STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+      run: echo "$STRATEGY_CONTEXT"
+    - name: Dump matrix context
+      env:
+        MATRIX_CONTEXT: ${{ toJson(matrix) }}
+      run: echo "$MATRIX_CONTEXT"
+
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+
+    - name: Get date - 2 Days Ago
+      id: date-echo-1
+      run: |
+        echo "PREVIOUS_DAYS_BEGIN=$(date -d '2 days ago' +'%y%m%d')" >> $GITHUB_ENV
+        echo $PREVIOUS_DAYS_BEGIN
+
+    - name: Get date - 1 Day Ago
+      id: date-echo-2
+      run: |
+        echo "PREVIOUS_DAYS_END=$(date -d '1 day ago' +'%Y%m%d')" >> $GITHUB_ENV
+        echo $PREVIOUS_DAYS_END
+
+    - name: Issues and PRs for me
+      run: |
+        cd automation/issues
+        npm ci
+        ls -al
+        node --loader ts-node/esm src/index.ts > data/repos_issues_output.md
+        ls -al data
+        cat data/repos_issues_output.md
+        cp data/repos_issues_output.md ../../github/stats/${{ steps.date2.outputs.date }}_repos_issues_and_prs.md
+        ls -al ../../github/stats
+
+    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      # Only run on main branch push (e.g. after pull request merge).
+      run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "dfberry@users.noreply.github.com"
+        git add github/stats/${{ steps.date2.outputs.date }}_daily_issues_and_prs.md
+        git add github/stats/${{ steps.date2.outputs.date }}_daily_repos_issues_and_prs.md
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
+        branch: main
