@@ -172,8 +172,8 @@ function printData(
   data.forEach((item: AppResult) => {
     // split url into its parts
     const urlParts = item.url.split('/');
-    const owner = urlParts[3];
-    const repo = urlParts[4];
+    const owner = urlParts[4];
+    const repo = urlParts[5];
     const user = item.user;
 
     // remove time from date

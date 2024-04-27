@@ -115,8 +115,8 @@ sortedAuthorData.forEach(item => {
 
     // split url into its parts
     const urlParts = item.url.split('/');
-    const owner = urlParts[3];
-    const repo = urlParts[4];
+    const owner = urlParts[4];
+    const repo = urlParts[5];
 
     // remove time from date
     item.date_created = item.date_created.split(',')[0];

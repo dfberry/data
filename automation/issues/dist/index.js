@@ -7,7 +7,6 @@ async function loadRepos() {
     const filePath = join(__dirname, '../repos.json');
     const data = await readFile(filePath, 'utf8');
     const repos = JSON.parse(data);
-    console.log(repos);
     return repos;
 }
 async function loadUsers() {
@@ -15,7 +14,6 @@ async function loadUsers() {
     const filePath = join(__dirname, '../users.json');
     const data = await readFile(filePath, 'utf8');
     const users = JSON.parse(data);
-    console.log(users);
     return users;
 }
 function convertIssueToResult(issue) {
@@ -31,7 +29,6 @@ function convertIssueToResult(issue) {
 }
 async function fetchRepoData(url) {
     const response = await fetch(url);
-    console.log(`fetchRepoData: ${url}`);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -43,7 +40,6 @@ async function fetchRepoData(url) {
 }
 async function fetchIssues(url) {
     const response = await fetch(url);
-    console.log(`fetchIssues: ${url}`);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -122,8 +118,8 @@ function printData(beginDate, endDate, reportName, data) {
     data.forEach((item) => {
         // split url into its parts
         const urlParts = item.url.split('/');
-        const owner = urlParts[3];
-        const repo = urlParts[4];
+        const owner = urlParts[4];
+        const repo = urlParts[5];
         const user = item.user;
         // remove time from date
         item.date_created = item.date_created.split(',')[0];

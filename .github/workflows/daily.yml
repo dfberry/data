@@ -72,7 +72,7 @@ jobs:
       run: |
         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
         git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/${{  steps.date_yesterday.outputs.date }}${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
+        git add github/stats/${{  steps.date_yesterday.outputs.date }}-${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
