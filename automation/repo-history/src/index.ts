@@ -60,7 +60,10 @@ async function processRepos(
   for await (const repo of repos) {
     const url = `https://api.github.com/repos/${repo}/issues?created:${beginDate}..${endDate}`;
     const repoResult: GitHubIssue[] = await fetchRepoData(url);
-    results.push(repoResult);
+    results.push({
+      repo,
+      results: repoResult
+    });
   }
 
   return results;
