@@ -7,7 +7,7 @@ on:
 
 env:
   DRAFT_FILE: assigned_issues_output
-  REPORT_NAME: daily_issues_and_prs
+  REPORT_NAME: my_daily_issues_and_prs
   REPORT_EXTENSION: json
 
 jobs:
@@ -50,6 +50,14 @@ jobs:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
 
 
+    - name: Get date - Yesterday
+      id: date_yesterday
+      run: echo "::set-output name=date::$(date -d 'yesterday' +'%Y%m%d')"
+    - name: Output date - Yesterday
+      run: |
+        echo "${{ steps.date_yesterday.outputs.date }}"
+
+
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
@@ -61,6 +69,7 @@ jobs:
         npm ci
         ls -al
         node --loader ts-node/esm src/index.ts > data/${{ env.DRAFT_FILE }}.${{ env.REPORT_EXTENSION}}
+        npm run format:json 
         ls -al data
         cat data/${{ env.DRAFT_FILE }}.${{ env.REPORT_EXTENSION}}
         cp data/${{ env.DRAFT_FILE }}.${{ env.REPORT_EXTENSION}} ../../github/stats/${{ steps.date_yesterday.outputs.date }}_${{ env.REPORT_NAME }}.${{ env.REPORT_EXTENSION}}

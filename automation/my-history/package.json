@@ -7,6 +7,7 @@
   "scripts": {
     "build": "npm run clean && npm run format && npm run lint && npm run build:tsc",
     "format": "prettier --write src/**/*.ts",
+    "format:json": "prettier --write data/**/*.json",
     "lint": "eslint src/**/*.ts --fix",
     "build:tsc": "tsc",
     "clean": "rm -rf dist",
