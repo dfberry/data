@@ -52,12 +52,6 @@ jobs:
       with:
         node-version: '18'
 
-
-    - name: Delete data/*.json
-      run: |
-        cd automation/history/data
-        rm -f *.json
-
     - name: Issues and PRs for me
       run: |
         cd automation/history
@@ -65,10 +59,8 @@ jobs:
         ls -al
         npm run start:all:1 
         ls -al data
-        cp data/*.* ../../github/stats
+        mv data/*.* ../../github/stats
         ls -al ../../github/stats
-        rm -f data/*.json
-
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       # Only run on main branch push (e.g. after pull request merge).
