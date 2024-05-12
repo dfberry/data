@@ -67,6 +67,8 @@ jobs:
         ls -al data
         cp data/*.* ../../github/stats
         ls -al ../../github/stats
+        rm -f data/*.json
+
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
       # Only run on main branch push (e.g. after pull request merge).
