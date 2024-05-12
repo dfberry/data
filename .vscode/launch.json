@@ -16,7 +16,6 @@
             "runtimeExecutable": "npm",
             "type": "node"
         },
-
         {
             "name": "Issues",
             "request": "launch",
@@ -28,6 +27,13 @@
             ],
             "runtimeExecutable": "npm",
             "type": "node"
+        },
+        {
+            "name": "Attach to Node Functions",
+            "type": "node",
+            "request": "attach",
+            "port": 9229,
+            "preLaunchTask": "func: host start"
         }
     ]
 }

@@ -8,5 +8,13 @@
     "vs-code-prettier-eslint.prettierLast": false,
     "[typescript]": {
       "editor.defaultFormatter": "vscode.typescript-language-features"
-    } // set as "true" to run 'prettier' last not first
+    },
+    "azureFunctions.deploySubpath": "automation/listen-to-storage",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "TypeScript",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.projectLanguageModel": 4,
+    "azureFunctions.projectSubpath": "automation/listen-to-storage",
+    "azureFunctions.preDeployTask": "npm prune (functions)" // set as "true" to run 'prettier' last not first
   }
