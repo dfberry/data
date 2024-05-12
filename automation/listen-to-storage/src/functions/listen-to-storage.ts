@@ -18,6 +18,8 @@ export async function listenToStorage(blob: Buffer, context: InvocationContext):
         properties: context.triggerMetadata.properties,
         path: context.triggerMetadata.path,
         length: blob.length,
+        processed: false,
+        dateProcessed: null,
         dateUploaded: new Date().toISOString(),
     }
 
