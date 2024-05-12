@@ -1,0 +1,81 @@
+{
+    "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824",
+    "repository_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs",
+    "labels_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824/labels{/name}",
+    "comments_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824/comments",
+    "events_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824/events",
+    "html_url": "https://github.com/MicrosoftDocs/azure-docs/issues/121824",
+    "id": 2254687843,
+    "node_id": "I_kwDOBFUV4s6GY85j",
+    "number": 121824,
+    "title": "AMS not included in this page, does so in abbriviatons",
+    "user": {
+      "login": "SiebeDev",
+      "id": 81007986,
+      "node_id": "MDQ6VXNlcjgxMDA3OTg2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/81007986?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/SiebeDev",
+      "html_url": "https://github.com/SiebeDev",
+      "followers_url": "https://api.github.com/users/SiebeDev/followers",
+      "following_url": "https://api.github.com/users/SiebeDev/following{/other_user}",
+      "gists_url": "https://api.github.com/users/SiebeDev/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/SiebeDev/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/SiebeDev/subscriptions",
+      "organizations_url": "https://api.github.com/users/SiebeDev/orgs",
+      "repos_url": "https://api.github.com/users/SiebeDev/repos",
+      "events_url": "https://api.github.com/users/SiebeDev/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/SiebeDev/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "id": 1068022647,
+        "node_id": "MDU6TGFiZWwxMDY4MDIyNjQ3",
+        "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/labels/frontdoor/svc",
+        "name": "frontdoor/svc",
+        "color": "ededed",
+        "default": false,
+        "description": null
+      },
+      {
+        "id": 1404895560,
+        "node_id": "MDU6TGFiZWwxNDA0ODk1NTYw",
+        "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/labels/Pri2",
+        "name": "Pri2",
+        "color": "ededed",
+        "default": false,
+        "description": null
+      }
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2024-04-20T19:30:48Z",
+    "updated_at": "2024-04-20T19:30:51Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "active_lock_reason": null,
+    "body": "\r\nAmsterdam POP is not included in this table, however it is named in the abbriviations page.\r\n\r\n\r\n\r\n---\r\n#### Document Details\r\n\r\n⚠ *Do not edit this section. It is required for learn.microsoft.com ➟ GitHub issue linking.*\r\n\r\n* ID: bd96cd50-5185-5544-842e-fb5dd6c7426e\r\n* Version Independent ID: 0f2523e5-9fcf-f93e-ef3d-c9eab9b89d03\r\n* Content: [Azure Front Door POP locations by region](https://learn.microsoft.com/en-us/azure/frontdoor/edge-locations-by-region)\r\n* Content Source: [articles/frontdoor/edge-locations-by-region.md](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/frontdoor/edge-locations-by-region.md)\r\n* Service: **frontdoor**\r\n* GitHub Login: @duongau\r\n* Microsoft Alias: **duau**",
+    "reactions": {
+      "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/121824/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
