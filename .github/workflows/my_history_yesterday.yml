@@ -52,6 +52,12 @@ jobs:
       with:
         node-version: '18'
 
+
+    - name: Delete data/*.json
+      run: |
+        cd automation/history/data
+        rm -f *.json
+
     - name: Issues and PRs for me
       run: |
         cd automation/history
