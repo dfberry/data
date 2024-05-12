@@ -55,20 +55,13 @@ jobs:
     - name: Issues and PRs for me
       run: |
         cd automation/history
+        mkdir data
         npm ci && npm run build
         ls -al
         npm run start:all:1 
         ls -al data
-        mv data/*.* ../../github/stats
+        cp data/*.json ../../github/stats
         ls -al ../../github/stats
-
-    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
-      # Only run on main branch push (e.g. after pull request merge).
-      run: |
-        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-        git config --global user.email "dfberry@users.noreply.github.com"
-        git add github/stats/*.*
-        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Upload JSON files to Azure Storage
       uses: bacongobbler/azure-blob-storage-upload@main
@@ -78,6 +71,18 @@ jobs:
         connection_string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
         extra_args: '--pattern *.json'
         overwrite: 'true'
+
+    - name: Clean up
+      run: |
+        rm -f data/*.json
+
+    - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
+      # Only run on main branch push (e.g. after pull request merge).
+      run: |
+        git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+        git config --global user.email "dfberry@users.noreply.github.com"
+        git add github/stats/*.*
+        git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
