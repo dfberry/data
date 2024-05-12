@@ -59,7 +59,7 @@ jobs:
         ls -al
         npm run start:all:1 
         ls -al data
-        cp data/*.* ../../github/stats/*.*
+        cp data/*.* ../../github/stats
         ls -al ../../github/stats
 
     - name: GIT Commit Build Artifacts (coverage, dist, devdist, docs)
