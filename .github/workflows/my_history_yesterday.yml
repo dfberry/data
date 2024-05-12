@@ -55,7 +55,7 @@ jobs:
     - name: Issues and PRs for me
       run: |
         cd automation/history
-        npm ci
+        npm ci && npm run build
         ls -al
         npm run start:all:1 
         ls -al data
