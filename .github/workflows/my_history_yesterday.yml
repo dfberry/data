@@ -70,6 +70,15 @@ jobs:
         git add github/stats/*.*
         git commit -a -m "${{ env.CI_COMMIT_MESSAGE }}"
 
+    - name: Upload JSON files to Azure Storage
+      uses: bacongobbler/azure-blob-storage-upload@main
+      with:
+        source_dir: 'automation/history/data'
+        container_name: 'my-history'
+        connection_string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        extra_args: '--pattern *.json'
+        overwrite: 'true'
+
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
