@@ -1,0 +1,170 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-12",
+      "end": "2024-05-12"
+    },
+    "url": "https://api.github.com/search/issues?q=author:diberry+created:2024-05-12..2024-05-12",
+    "author": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-12",
+      "end": "2024-05-12"
+    },
+    "url": "https://api.github.com/search/issues?q=author:dfberry+created:2024-05-12..2024-05-12",
+    "author": "dfberry",
+    "results": {
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430",
+          "repository_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs",
+          "labels_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430/labels{/name}",
+          "comments_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430/comments",
+          "events_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430/events",
+          "html_url": "https://github.com/MicrosoftDocs/azure-docs/issues/122430",
+          "id": 2291522901,
+          "node_id": "I_kwDOBFUV4s6Ild1V",
+          "number": 122430,
+          "title": "Turn this into a table for scannability",
+          "user": {
+            "login": "dfberry",
+            "id": 1517008,
+            "node_id": "MDQ6VXNlcjE1MTcwMDg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1517008?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dfberry",
+            "html_url": "https://github.com/dfberry",
+            "followers_url": "https://api.github.com/users/dfberry/followers",
+            "following_url": "https://api.github.com/users/dfberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dfberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dfberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dfberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/dfberry/orgs",
+            "repos_url": "https://api.github.com/users/dfberry/repos",
+            "events_url": "https://api.github.com/users/dfberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dfberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 1049557287,
+              "node_id": "MDU6TGFiZWwxMDQ5NTU3Mjg3",
+              "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/labels/azure-functions/svc",
+              "name": "azure-functions/svc",
+              "color": "ededed",
+              "default": false,
+              "description": null
+            },
+            {
+              "id": 1404895560,
+              "node_id": "MDU6TGFiZWwxNDA0ODk1NTYw",
+              "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/labels/Pri2",
+              "name": "Pri2",
+              "color": "ededed",
+              "default": false,
+              "description": null
+            }
+          ],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-12T22:09:23Z",
+          "updated_at": "2024-05-12T22:09:33Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "I can submit a PR if you agree @ggailey777 \r\n\r\n```\r\nUnless otherwise noted, examples in this article target version 3.x of the [Azure Cosmos DB extension](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2). For use with extension version 4.x, you need to replace the string collection in property and attribute names with container and connection_string_setting with connection.\r\n```\r\n\r\n\r\n---\r\n#### Document Details\r\n\r\n⚠ *Do not edit this section. It is required for learn.microsoft.com ➟ GitHub issue linking.*\r\n\r\n* ID: 6dfb86c0-02ed-0abc-8789-ba91d7979762\r\n* Version Independent ID: ecbcc2c6-869e-2492-f10f-a07cf4b34209\r\n* Content: [Azure Cosmos DB output binding for Functions 2.x and higher](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-cosmosdb-v2-output?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cextensionv4&pivots=programming-language-javascript)\r\n* Content Source: [articles/azure-functions/functions-bindings-cosmosdb-v2-output.md](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/azure-functions/functions-bindings-cosmosdb-v2-output.md)\r\n* Service: **azure-functions**\r\n* GitHub Login: @ggailey777\r\n* Microsoft Alias: **glenga**",
+          "reactions": {
+            "url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/MicrosoftDocs/azure-docs/issues/122430/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677",
+          "repository_url": "https://api.github.com/repos/Azure/azure-functions-core-tools",
+          "labels_url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677/comments",
+          "events_url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677/events",
+          "html_url": "https://github.com/Azure/azure-functions-core-tools/issues/3677",
+          "id": 2291522175,
+          "node_id": "I_kwDOBKYLcM6Ildp_",
+          "number": 3677,
+          "title": "CosmosDB error -   Can't figure out which ctor to call.",
+          "user": {
+            "login": "dfberry",
+            "id": 1517008,
+            "node_id": "MDQ6VXNlcjE1MTcwMDg=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1517008?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/dfberry",
+            "html_url": "https://github.com/dfberry",
+            "followers_url": "https://api.github.com/users/dfberry/followers",
+            "following_url": "https://api.github.com/users/dfberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/dfberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/dfberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/dfberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/dfberry/orgs",
+            "repos_url": "https://api.github.com/users/dfberry/repos",
+            "events_url": "https://api.github.com/users/dfberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/dfberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 1,
+          "created_at": "2024-05-12T22:07:10Z",
+          "updated_at": "2024-05-12T23:01:26Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "On Node.js/TS/pm v4 - I have a CosmosDB trigger for tableA, then I want to process each doc, and insert into table B. I'm using extraOutputs because it is more obvious to me. Is there anything wrong with it? \r\n\r\nIncoming doc has blob storage URL of a JSON object with mulitple items, I want each item to be insert into a different table. So this function turns 1 doc in tableA into many docs in tableB. Is there a better way to do this?\r\n\r\n```typescript\r\nimport { app, InvocationContext, output } from \"@azure/functions\";\r\nimport { ProcessingDocument } from \"../models\";\r\nimport { getJsonFromBlob } from \"../azure-blob-storage\";\r\n\r\nconst sendToCosmosDb = output.cosmosDB({\r\n    databaseName: 'github_history',\r\n    containerName: 'issues',\r\n    connection: 'AZURE_COSMOSDB_CONNECTION_STRING',\r\n    createIfNotExists: false,\r\n});\r\n\r\nexport async function listenToDatabase(documents: unknown[], context: InvocationContext): Promise<void> {\r\n\r\n    try {\r\n\r\n        context.log(`Cosmos DB function processed ${documents.length} documents`);\r\n\r\n        for (const doc of documents) {\r\n\r\n            const docToProcess = doc as ProcessingDocument;\r\n\r\n\r\n            // filename like `20240511_my_daily_issues_and_prs_1.json`\r\n            // which has a format of `YYYYMMDD_{name}_{numDays}.json`\r\n            // regex to extract the date and name and number of days\r\n            const regex = /^(\\d{8})_(.+)_(\\d+)\\.json$/;\r\n            const match = docToProcess.name.match(regex);\r\n\r\n            // extract the date and name and number of days\r\n            const date = match[1];\r\n            const name = match[2];\r\n            const numDays = parseInt(match[3]);\r\n\r\n            // Read DB doc\r\n            context.log(`Processing document with date ${date}, name ${name}, and numDays ${numDays}`);\r\n\r\n            // Read blob\r\n            const data = await getJsonFromBlob(docToProcess.url, process.env.AZURE_STORAGE_CONNECTION_STRING, context.log);\r\n\r\n            // Get the inner docs to send to a different DB table\r\n            const innerDocs = data?.results.items\r\n\r\n            for (const innerDoc of innerDocs) {\r\n                context.extraOutputs.set(sendToCosmosDb, {\r\n                    type: name,\r\n                    ...innerDoc\r\n                });\r\n            }\r\n        }\r\n    } catch (error) {\r\n        context.log(`listenToDatabase - Error processing documents: ${error}`);\r\n\r\n    }\r\n}\r\napp.cosmosDB('listen-to-database', {\r\n    connectionStringSetting: 'AZURE_COSMOSDB_CONNECTION_STRING',\r\n    databaseName: 'github_history',\r\n    collectionName: 'data_processing',\r\n    createLeaseCollectionIfNotExists: true,\r\n    extraOutputs: [sendToCosmosDb],\r\n    handler: listenToDatabase\r\n});\r\n```\r\n\r\nError is : [2024-05-12T22:05:01.897Z] The 'listen-to-database' function is in error: Unable to configure binding 'cosmosDBTrigger026ae58797' of type 'cosmosDBTrigger'. This may indicate invalid function.json properties. Can't figure out which ctor to call.",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure/azure-functions-core-tools/issues/3677/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  }
+]
