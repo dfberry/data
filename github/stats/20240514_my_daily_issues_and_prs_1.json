@@ -1,0 +1,90 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-14",
+      "end": "2024-05-14"
+    },
+    "url": "https://api.github.com/search/issues?q=author:diberry+created:2024-05-14..2024-05-14",
+    "author": "diberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321/events",
+          "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp/issues/321",
+          "id": 2296154179,
+          "node_id": "I_kwDOJTMLG86I3IhD",
+          "number": 321,
+          "title": "Azure Cognitive Search -> Azure AI Search branding change",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-14T18:49:06Z",
+          "updated_at": "2024-05-14T18:49:06Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "Please change all text and image use of the term `Azure Cognitive Search` to `Azure AI Search` to conform to brand standards. ",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/321/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-14",
+      "end": "2024-05-14"
+    },
+    "url": "https://api.github.com/search/issues?q=author:dfberry+created:2024-05-14..2024-05-14",
+    "author": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
