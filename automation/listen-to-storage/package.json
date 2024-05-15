@@ -11,7 +11,9 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
+    "@azure/cosmos": "^4.0.0",
     "@azure/functions": "^4.0.0",
+    "@azure/storage-blob": "^12.17.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
