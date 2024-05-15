@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const sendToCosmosDb = output.cosmosDB({
     databaseName: 'github_history',
-    containerName: 'data_processing_test',
+    containerName: 'data_processing',
     connection: 'AZURE_COSMOSDB_CONNECTION_STRING'
 });
 
@@ -35,7 +35,7 @@ export async function listenToStorage(blob: Buffer, context: InvocationContext):
 }
 
 app.storageBlob('listen-to-storage', {
-    path: 'my-history-test/{name}',
+    path: 'my-history/{name}',
     connection: 'AZURE_STORAGE_CONNECTION_STRING',
     extraOutputs: [sendToCosmosDb],
     handler: listenToStorage

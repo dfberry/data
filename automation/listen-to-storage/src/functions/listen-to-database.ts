@@ -7,7 +7,7 @@ import { getContainerClient, insertIntoDb } from "../azure-cosmos-db";
 
 const sendToCosmosDb = output.cosmosDB({
     databaseName: 'github_history',
-    containerName: 'issues_test',
+    containerName: 'issues',
     connection: 'AZURE_COSMOSDB_CONNECTION_STRING',
 });
 
@@ -55,6 +55,6 @@ export async function listenToDatabase(documents: unknown[], context: Invocation
 app.cosmosDB('listen-to-database', {
     connection: 'AZURE_COSMOSDB_CONNECTION_STRING',
     databaseName: 'github_history',
-    containerName: 'data_processing_test',
+    containerName: 'data_processing',
     handler: listenToDatabase
 });
