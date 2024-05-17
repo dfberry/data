@@ -1,0 +1,433 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:diberry+created:2024-05-16..2024-05-16",
+    "user": "diberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/dotnet/docs/issues/40976",
+          "repository_url": "https://api.github.com/repos/dotnet/docs",
+          "labels_url": "https://api.github.com/repos/dotnet/docs/issues/40976/labels{/name}",
+          "comments_url": "https://api.github.com/repos/dotnet/docs/issues/40976/comments",
+          "events_url": "https://api.github.com/repos/dotnet/docs/issues/40976/events",
+          "html_url": "https://github.com/dotnet/docs/pull/40976",
+          "id": 2301392680,
+          "node_id": "PR_kwDOAiOjoc5vuFYY",
+          "number": 40976,
+          "title": "AI chat app refresh",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 4421128573,
+              "node_id": "LA_kwDOAiOjoc8AAAABB4URfQ",
+              "url": "https://api.github.com/repos/dotnet/docs/labels/community-contribution",
+              "name": "community-contribution",
+              "color": "c2e0c6",
+              "default": false,
+              "description": "Indicates PR is created by someone from the .NET community."
+            }
+          ],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": {
+            "url": "https://api.github.com/repos/dotnet/docs/milestones/120",
+            "html_url": "https://github.com/dotnet/docs/milestone/120",
+            "labels_url": "https://api.github.com/repos/dotnet/docs/milestones/120/labels",
+            "id": 10243064,
+            "node_id": "MI_kwDOAiOjoc4AnEv4",
+            "number": 120,
+            "title": "May 2024",
+            "description": "",
+            "creator": {
+              "login": "BillWagner",
+              "id": 493969,
+              "node_id": "MDQ6VXNlcjQ5Mzk2OQ==",
+              "avatar_url": "https://avatars.githubusercontent.com/u/493969?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/BillWagner",
+              "html_url": "https://github.com/BillWagner",
+              "followers_url": "https://api.github.com/users/BillWagner/followers",
+              "following_url": "https://api.github.com/users/BillWagner/following{/other_user}",
+              "gists_url": "https://api.github.com/users/BillWagner/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/BillWagner/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/BillWagner/subscriptions",
+              "organizations_url": "https://api.github.com/users/BillWagner/orgs",
+              "repos_url": "https://api.github.com/users/BillWagner/repos",
+              "events_url": "https://api.github.com/users/BillWagner/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/BillWagner/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "open_issues": 34,
+            "closed_issues": 195,
+            "state": "open",
+            "created_at": "2023-11-28T21:26:10Z",
+            "updated_at": "2024-05-16T23:17:54Z",
+            "due_on": "2024-05-31T07:00:00Z",
+            "closed_at": null
+          },
+          "comments": 2,
+          "created_at": "2024-05-16T21:38:06Z",
+          "updated_at": "2024-05-16T22:53:16Z",
+          "closed_at": "2024-05-16T22:52:36Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/dotnet/docs/pulls/40976",
+            "html_url": "https://github.com/dotnet/docs/pull/40976",
+            "diff_url": "https://github.com/dotnet/docs/pull/40976.diff",
+            "patch_url": "https://github.com/dotnet/docs/pull/40976.patch",
+            "merged_at": "2024-05-16T22:52:36Z"
+          },
+          "body": "Remove unnecessary prereq\r\nMove to GitHub stable markdown for devcontainer and Codespaces.\r\n\n\n<!-- PREVIEW-TABLE-START -->\n\n---\n\n#### Internal previews\n\n| 📄 File | 🔗 Preview link |\n|:--|:--|\n| [docs/ai/get-started-app-chat-scaling-with-azure-container-apps.md](https://github.com/dotnet/docs/blob/f6cb49fe886d2674b515a969eb1546719997377c/docs/ai/get-started-app-chat-scaling-with-azure-container-apps.md) | [CustomerIntent: As a .NET developer new to Azure OpenAI, I want to scale my Azure OpenAI capacity to avoid rate limit errors with Azure Container Apps.](https://review.learn.microsoft.com/en-us/dotnet/ai/get-started-app-chat-scaling-with-azure-container-apps?branch=pr-en-us-40976) |\n| [docs/ai/get-started-app-chat-template.md](https://github.com/dotnet/docs/blob/f6cb49fe886d2674b515a969eb1546719997377c/docs/ai/get-started-app-chat-template.md) | [CustomerIntent: As a .NET developer new to Azure OpenAI, I want deploy and use sample code to interact with app infused with my own business data so that learn from the sample code.](https://review.learn.microsoft.com/en-us/dotnet/ai/get-started-app-chat-template?branch=pr-en-us-40976) |\n\n\n<!-- PREVIEW-TABLE-END -->",
+          "reactions": {
+            "url": "https://api.github.com/repos/dotnet/docs/issues/40976/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/dotnet/docs/issues/40976/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:dfberry+created:2024-05-16..2024-05-16",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:diberry+created:2024-05-16..2024-05-16",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:dfberry+created:2024-05-16..2024-05-16",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:diberry+created:2024-05-16..2024-05-16",
+    "user": "diberry",
+    "results": {
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113/events",
+          "html_url": "https://github.com/Azure-Samples/openai-chat-app-quickstart/pull/113",
+          "id": 2301564075,
+          "node_id": "PR_kwDOJhInCs5vurem",
+          "number": 113,
+          "title": "Samples Browser hack",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-16T23:54:35Z",
+          "updated_at": "2024-05-17T00:05:27Z",
+          "closed_at": "2024-05-17T00:05:27Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/pulls/113",
+            "html_url": "https://github.com/Azure-Samples/openai-chat-app-quickstart/pull/113",
+            "diff_url": "https://github.com/Azure-Samples/openai-chat-app-quickstart/pull/113.diff",
+            "patch_url": "https://github.com/Azure-Samples/openai-chat-app-quickstart/pull/113.patch",
+            "merged_at": "2024-05-17T00:05:27Z"
+          },
+          "body": "Merge before 8am EST",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-quickstart/issues/113/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/dotnet/docs/issues/40976",
+          "repository_url": "https://api.github.com/repos/dotnet/docs",
+          "labels_url": "https://api.github.com/repos/dotnet/docs/issues/40976/labels{/name}",
+          "comments_url": "https://api.github.com/repos/dotnet/docs/issues/40976/comments",
+          "events_url": "https://api.github.com/repos/dotnet/docs/issues/40976/events",
+          "html_url": "https://github.com/dotnet/docs/pull/40976",
+          "id": 2301392680,
+          "node_id": "PR_kwDOAiOjoc5vuFYY",
+          "number": 40976,
+          "title": "AI chat app refresh",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 4421128573,
+              "node_id": "LA_kwDOAiOjoc8AAAABB4URfQ",
+              "url": "https://api.github.com/repos/dotnet/docs/labels/community-contribution",
+              "name": "community-contribution",
+              "color": "c2e0c6",
+              "default": false,
+              "description": "Indicates PR is created by someone from the .NET community."
+            }
+          ],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": {
+            "url": "https://api.github.com/repos/dotnet/docs/milestones/120",
+            "html_url": "https://github.com/dotnet/docs/milestone/120",
+            "labels_url": "https://api.github.com/repos/dotnet/docs/milestones/120/labels",
+            "id": 10243064,
+            "node_id": "MI_kwDOAiOjoc4AnEv4",
+            "number": 120,
+            "title": "May 2024",
+            "description": "",
+            "creator": {
+              "login": "BillWagner",
+              "id": 493969,
+              "node_id": "MDQ6VXNlcjQ5Mzk2OQ==",
+              "avatar_url": "https://avatars.githubusercontent.com/u/493969?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/BillWagner",
+              "html_url": "https://github.com/BillWagner",
+              "followers_url": "https://api.github.com/users/BillWagner/followers",
+              "following_url": "https://api.github.com/users/BillWagner/following{/other_user}",
+              "gists_url": "https://api.github.com/users/BillWagner/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/BillWagner/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/BillWagner/subscriptions",
+              "organizations_url": "https://api.github.com/users/BillWagner/orgs",
+              "repos_url": "https://api.github.com/users/BillWagner/repos",
+              "events_url": "https://api.github.com/users/BillWagner/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/BillWagner/received_events",
+              "type": "User",
+              "site_admin": false
+            },
+            "open_issues": 34,
+            "closed_issues": 195,
+            "state": "open",
+            "created_at": "2023-11-28T21:26:10Z",
+            "updated_at": "2024-05-16T23:17:54Z",
+            "due_on": "2024-05-31T07:00:00Z",
+            "closed_at": null
+          },
+          "comments": 2,
+          "created_at": "2024-05-16T21:38:06Z",
+          "updated_at": "2024-05-16T22:53:16Z",
+          "closed_at": "2024-05-16T22:52:36Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/dotnet/docs/pulls/40976",
+            "html_url": "https://github.com/dotnet/docs/pull/40976",
+            "diff_url": "https://github.com/dotnet/docs/pull/40976.diff",
+            "patch_url": "https://github.com/dotnet/docs/pull/40976.patch",
+            "merged_at": "2024-05-16T22:52:36Z"
+          },
+          "body": "Remove unnecessary prereq\r\nMove to GitHub stable markdown for devcontainer and Codespaces.\r\n\n\n<!-- PREVIEW-TABLE-START -->\n\n---\n\n#### Internal previews\n\n| 📄 File | 🔗 Preview link |\n|:--|:--|\n| [docs/ai/get-started-app-chat-scaling-with-azure-container-apps.md](https://github.com/dotnet/docs/blob/f6cb49fe886d2674b515a969eb1546719997377c/docs/ai/get-started-app-chat-scaling-with-azure-container-apps.md) | [CustomerIntent: As a .NET developer new to Azure OpenAI, I want to scale my Azure OpenAI capacity to avoid rate limit errors with Azure Container Apps.](https://review.learn.microsoft.com/en-us/dotnet/ai/get-started-app-chat-scaling-with-azure-container-apps?branch=pr-en-us-40976) |\n| [docs/ai/get-started-app-chat-template.md](https://github.com/dotnet/docs/blob/f6cb49fe886d2674b515a969eb1546719997377c/docs/ai/get-started-app-chat-template.md) | [CustomerIntent: As a .NET developer new to Azure OpenAI, I want deploy and use sample code to interact with app infused with my own business data so that learn from the sample code.](https://review.learn.microsoft.com/en-us/dotnet/ai/get-started-app-chat-template?branch=pr-en-us-40976) |\n\n\n<!-- PREVIEW-TABLE-END -->",
+          "reactions": {
+            "url": "https://api.github.com/repos/dotnet/docs/issues/40976/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/dotnet/docs/issues/40976/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:dfberry+created:2024-05-16..2024-05-16",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:diberry+created:2024-05-16..2024-05-16",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:dfberry+created:2024-05-16..2024-05-16",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:diberry+created:2024-05-16..2024-05-16",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-16",
+      "end": "2024-05-16"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:dfberry+created:2024-05-16..2024-05-16",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
