@@ -1,0 +1,609 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:diberry+created:2024-05-19..2024-05-19",
+    "user": "diberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/events",
+          "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631",
+          "id": 2304586274,
+          "node_id": "PR_kwDOI7h_Ps5v4uSL",
+          "number": 1631,
+          "title": "Fix samples browser",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 3,
+          "created_at": "2024-05-19T12:22:25Z",
+          "updated_at": "2024-05-19T15:01:24Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/pulls/1631",
+            "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631",
+            "diff_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631.diff",
+            "patch_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631.patch",
+            "merged_at": null
+          },
+          "body": "## Purpose\n\n<!-- Describe the intention of the changes being proposed. What problem does it solve or functionality does it add? -->\n\n\n## Does this introduce a breaking change?\n\nWhen developers merge from main and run the server, azd up, or azd deploy, will this produce an error?\nIf you're not sure, try it out on an old environment.\n\n```\n[ ] Yes\n[ ] No\n```\n\n## Does this require changes to learn.microsoft.com docs?\n\nThis repository is referenced by [this tutorial](https://learn.microsoft.com/azure/developer/python/get-started-app-chat-template)\nwhich includes deployment, settings and usage instructions. If text or screenshot need to change in the tutorial,\ncheck the box below and notify the tutorial author. A Microsoft employee can do this for you if you're an external contributor.\n\n```\n[ ] Yes\n[ ] No\n```\n\n## Type of change\n\n```\n[ ] Bugfix\n[ ] Feature\n[ ] Code style update (formatting, local variables)\n[ ] Refactoring (no functional changes, no api changes)\n[ ] Documentation content changes\n[ ] Other... Please describe:\n```\n\n## Code quality checklist\n\nSee [CONTRIBUTING.md](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/CONTRIBUTING.md#submit-pr) for more details.\n\n- [ ] The current tests all pass (`python -m pytest`).\n- [ ] I added tests that prove my fix is effective or that my feature works\n- [ ] I ran `python -m pytest --cov` to verify 100% coverage of added lines\n- [ ] I ran `python -m mypy` to check for type errors\n- [ ] I either used the pre-commit hooks or ran `ruff` and `black` manually on my code.\n",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:dfberry+created:2024-05-19..2024-05-19",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:diberry+created:2024-05-19..2024-05-19",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:dfberry+created:2024-05-19..2024-05-19",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:diberry+created:2024-05-19..2024-05-19",
+    "user": "diberry",
+    "results": {
+      "total_count": 6,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66/events",
+          "html_url": "https://github.com/Azure-Samples/azure-typescript-e2e-apps/pull/66",
+          "id": 2304683152,
+          "node_id": "PR_kwDOJau1Jc5v5BCm",
+          "number": 66,
+          "title": "README updates",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-19T16:20:09Z",
+          "updated_at": "2024-05-19T16:20:09Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/pulls/66",
+            "html_url": "https://github.com/Azure-Samples/azure-typescript-e2e-apps/pull/66",
+            "diff_url": "https://github.com/Azure-Samples/azure-typescript-e2e-apps/pull/66.diff",
+            "patch_url": "https://github.com/Azure-Samples/azure-typescript-e2e-apps/pull/66.patch",
+            "merged_at": null
+          },
+          "body": "## Purpose\n<!-- Describe the intention of the changes being proposed. What problem does it solve or functionality does it add? -->\n* ...\n\n## Does this introduce a breaking change?\n<!-- Mark one with an \"x\". -->\n```\n[ ] Yes\n[ ] No\n```\n\n## Pull Request Type\nWhat kind of change does this Pull Request introduce?\n\n<!-- Please check the one that applies to this PR using \"x\". -->\n```\n[ ] Bugfix\n[ ] Feature\n[ ] Code style update (formatting, local variables)\n[ ] Refactoring (no functional changes, no api changes)\n[ ] Documentation content changes\n[ ] Other... Please describe:\n```\n\n## How to Test\n*  Get the code\n\n```\ngit clone [repo-address]\ncd [repo-name]\ngit checkout [branch-name]\nnpm install\n```\n\n* Test the code\n<!-- Add steps to run the tests suite and/or manually test -->\n```\n```\n\n## What to Check\nVerify that the following are valid\n* ...\n\n## Other Information\n<!-- Add any other helpful information that may be needed here. -->",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-typescript-e2e-apps/issues/66/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure/azure-dev/issues/3932",
+          "repository_url": "https://api.github.com/repos/Azure/azure-dev",
+          "labels_url": "https://api.github.com/repos/Azure/azure-dev/issues/3932/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure/azure-dev/issues/3932/comments",
+          "events_url": "https://api.github.com/repos/Azure/azure-dev/issues/3932/events",
+          "html_url": "https://github.com/Azure/azure-dev/issues/3932",
+          "id": 2304659499,
+          "node_id": "I_kwDOHnONX86JXlAr",
+          "number": 3932,
+          "title": "[Issue] Bash (MINGW64) doesn't show subscription list during `azd up`",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-19T15:20:51Z",
+          "updated_at": "2024-05-19T15:20:51Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "- [ ] Make sure you've installed the latest version using [instructions in the wiki](../wiki/install)\r\n\r\n**Output from `azd version`**\r\nRun `azd version` and copy and paste the output here: azd version 1.9.2 (commit c58b02f71710960aba28f81f3698e64cfdda9f96)\r\n\r\n\r\n**Describe the bug**\r\nAzd up in the mingw64/bash terminal doesn't display the subscription list. \r\n\r\n**To Reproduce**\r\nIn bash/mingw64 shell, `azd up`.\r\n\r\n<img width=\"766\" alt=\"image\" src=\"https://github.com/Azure/azure-dev/assets/41597107/0e4ba2cd-caea-40e7-8af2-cdbc356e78fe\">\r\n\r\n\r\n**Expected behavior**\r\nSimilar to VSCode\r\n\r\n<img width=\"662\" alt=\"image\" src=\"https://github.com/Azure/azure-dev/assets/41597107/e6a1397e-e5ca-4210-8177-e3094ccd8115\">\r\n\r\n\r\n**Environment**\r\nInformation on your environment:\r\n    * Language name and version - windows 11 internal\r\n    * IDE and version : [e.g. Visual Studio 16.3]\r\n\r\n**Additional context**\r\nAdd any other context about the problem here.\r\n",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure/azure-dev/issues/3932/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure/azure-dev/issues/3932/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/events",
+          "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631",
+          "id": 2304586274,
+          "node_id": "PR_kwDOI7h_Ps5v4uSL",
+          "number": 1631,
+          "title": "Fix samples browser",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 3,
+          "created_at": "2024-05-19T12:22:25Z",
+          "updated_at": "2024-05-19T15:01:24Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/pulls/1631",
+            "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631",
+            "diff_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631.diff",
+            "patch_url": "https://github.com/Azure-Samples/azure-search-openai-demo/pull/1631.patch",
+            "merged_at": null
+          },
+          "body": "## Purpose\n\n<!-- Describe the intention of the changes being proposed. What problem does it solve or functionality does it add? -->\n\n\n## Does this introduce a breaking change?\n\nWhen developers merge from main and run the server, azd up, or azd deploy, will this produce an error?\nIf you're not sure, try it out on an old environment.\n\n```\n[ ] Yes\n[ ] No\n```\n\n## Does this require changes to learn.microsoft.com docs?\n\nThis repository is referenced by [this tutorial](https://learn.microsoft.com/azure/developer/python/get-started-app-chat-template)\nwhich includes deployment, settings and usage instructions. If text or screenshot need to change in the tutorial,\ncheck the box below and notify the tutorial author. A Microsoft employee can do this for you if you're an external contributor.\n\n```\n[ ] Yes\n[ ] No\n```\n\n## Type of change\n\n```\n[ ] Bugfix\n[ ] Feature\n[ ] Code style update (formatting, local variables)\n[ ] Refactoring (no functional changes, no api changes)\n[ ] Documentation content changes\n[ ] Other... Please describe:\n```\n\n## Code quality checklist\n\nSee [CONTRIBUTING.md](https://github.com/Azure-Samples/azure-search-openai-demo/blob/main/CONTRIBUTING.md#submit-pr) for more details.\n\n- [ ] The current tests all pass (`python -m pytest`).\n- [ ] I added tests that prove my fix is effective or that my feature works\n- [ ] I ran `python -m pytest --cov` to verify 100% coverage of added lines\n- [ ] I ran `python -m mypy` to check for type errors\n- [ ] I either used the pre-commit hooks or ran `ruff` and `black` manually on my code.\n",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1631/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13/events",
+          "html_url": "https://github.com/Azure-Samples/openai-chat-app-entra-auth-local/pull/13",
+          "id": 2304376992,
+          "node_id": "PR_kwDOL84FbM5v4G0h",
+          "number": 13,
+          "title": "Fix samples browser - msal error",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 1,
+          "created_at": "2024-05-19T01:40:29Z",
+          "updated_at": "2024-05-19T14:46:55Z",
+          "closed_at": "2024-05-19T14:46:55Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/pulls/13",
+            "html_url": "https://github.com/Azure-Samples/openai-chat-app-entra-auth-local/pull/13",
+            "diff_url": "https://github.com/Azure-Samples/openai-chat-app-entra-auth-local/pull/13.diff",
+            "patch_url": "https://github.com/Azure-Samples/openai-chat-app-entra-auth-local/pull/13.patch",
+            "merged_at": "2024-05-19T14:46:55Z"
+          },
+          "body": "## Purpose\n fix for error\n\n{\n  \"repo\": \"https://github.com/azure-samples/openai-chat-app-entra-auth-local\",\n  \"lastScanCommit\": \"9312a29e6c7205ae2562238bb5543ae55cf71b33\",\n  \"status\": \"WARNING\",\n  \"information\": \"Not all the samples are successfully ingested.\",\n  \"samples\": [\n    {\n      \"path\": \"docs\\\\README.md\",\n      \"status\": \"FAIL\",\n      \"information\": \"Invalid products found: msal;\"\n    }\n  ]\n}",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/openai-chat-app-entra-auth-local/issues/13/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5/events",
+          "html_url": "https://github.com/Azure-Samples/azure-openai-keyless/pull/5",
+          "id": 2304372543,
+          "node_id": "PR_kwDOLskIxc5v4F6_",
+          "number": 5,
+          "title": "Fix samples browser",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-19T01:32:20Z",
+          "updated_at": "2024-05-19T14:48:28Z",
+          "closed_at": "2024-05-19T14:48:28Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/pulls/5",
+            "html_url": "https://github.com/Azure-Samples/azure-openai-keyless/pull/5",
+            "diff_url": "https://github.com/Azure-Samples/azure-openai-keyless/pull/5.diff",
+            "patch_url": "https://github.com/Azure-Samples/azure-openai-keyless/pull/5.patch",
+            "merged_at": "2024-05-19T14:48:28Z"
+          },
+          "body": null,
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-openai-keyless/issues/5/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16/events",
+          "html_url": "https://github.com/Azure-Samples/openai-aca-lb/pull/16",
+          "id": 2304361067,
+          "node_id": "PR_kwDOLFMF_85v4D-X",
+          "number": 16,
+          "title": "Fix samples browser",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-19T00:44:42Z",
+          "updated_at": "2024-05-19T00:44:42Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/pulls/16",
+            "html_url": "https://github.com/Azure-Samples/openai-aca-lb/pull/16",
+            "diff_url": "https://github.com/Azure-Samples/openai-aca-lb/pull/16.diff",
+            "patch_url": "https://github.com/Azure-Samples/openai-aca-lb/pull/16.patch",
+            "merged_at": null
+          },
+          "body": "## Purpose\n<!-- Describe the intention of the changes being proposed. What problem does it solve or functionality does it add? -->\n* ...\n\n## Does this introduce a breaking change?\n<!-- Mark one with an \"x\". -->\n```\n[ ] Yes\n[ ] No\n```\n\n## Pull Request Type\nWhat kind of change does this Pull Request introduce?\n\n<!-- Please check the one that applies to this PR using \"x\". -->\n```\n[ ] Bugfix\n[ ] Feature\n[ ] Code style update (formatting, local variables)\n[ ] Refactoring (no functional changes, no api changes)\n[ ] Documentation content changes\n[ ] Other... Please describe:\n```\n\n## How to Test\n*  Get the code\n\n```\ngit clone [repo-address]\ncd [repo-name]\ngit checkout [branch-name]\nnpm install\n```\n\n* Test the code\n<!-- Add steps to run the tests suite and/or manually test -->\n```\n```\n\n## What to Check\nVerify that the following are valid\n* ...\n\n## Other Information\n<!-- Add any other helpful information that may be needed here. -->",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/openai-aca-lb/issues/16/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:dfberry+created:2024-05-19..2024-05-19",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:diberry+created:2024-05-19..2024-05-19",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:dfberry+created:2024-05-19..2024-05-19",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:diberry+created:2024-05-19..2024-05-19",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-19",
+      "end": "2024-05-19"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:dfberry+created:2024-05-19..2024-05-19",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
