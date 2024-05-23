@@ -1,0 +1,444 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:diberry+created:2024-05-22..2024-05-22",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:dfberry+created:2024-05-22..2024-05-22",
+    "user": "dfberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/eslint/eslint/issues/18487",
+          "repository_url": "https://api.github.com/repos/eslint/eslint",
+          "labels_url": "https://api.github.com/repos/eslint/eslint/issues/18487/labels{/name}",
+          "comments_url": "https://api.github.com/repos/eslint/eslint/issues/18487/comments",
+          "events_url": "https://api.github.com/repos/eslint/eslint/issues/18487/events",
+          "html_url": "https://github.com/eslint/eslint/issues/18487",
+          "id": 2311309976,
+          "node_id": "I_kwDOAKjKDc6Jw8qY",
+          "number": 18487,
+          "title": "Bug: Eslint 9 CLI doest work",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 45711350,
+              "node_id": "MDU6TGFiZWw0NTcxMTM1MA==",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/bug",
+              "name": "bug",
+              "color": "fc2929",
+              "default": true,
+              "description": "ESLint is working incorrectly"
+            },
+            {
+              "id": 2786804245,
+              "node_id": "MDU6TGFiZWwyNzg2ODA0MjQ1",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/repro:needed",
+              "name": "repro:needed",
+              "color": "136971",
+              "default": false,
+              "description": ""
+            }
+          ],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 1,
+          "created_at": "2024-05-22T19:20:19Z",
+          "updated_at": "2024-05-22T19:52:40Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "### Environment\n\nNode version: v20.13.1\r\nnpm version: 10.5.2\r\nLocal ESLint version: \r\nGlobal ESLint version: \r\nOperating System: \r\n\n\n### What parser are you using?\n\nOther\n\n### What did you do?\n\n<details>\r\n<summary>Configuration</summary>\r\n\r\nInstall fails\r\n\r\n</details>\r\n\r\n```\r\nnpm init @eslint/config@latest\r\n```\r\n\r\n\n\n### What did you expect to happen?\n\nInstall succeeds\n\n### What actually happened?\n\ndiberry ➜ /workspaces/eslint9-examples/ts-esm (diberry/feature-examples) $ npm init @eslint/config@latest\r\n✔ How would you like to use ESLint? · problems\r\n✔ What type of modules does your project use? · esm\r\n✔ Which framework does your project use? · none\r\n✔ Does your project use TypeScript? · typescript\r\n✔ Where does your code run? · browser\r\nThe config that you've selected requires the following dependencies:\r\n\r\neslint@9.x, globals, @eslint/js, typescript-eslint\r\n✔ Would you like to install them now? · No / Yes\r\n✔ Which package manager do you want to use? · npm\r\n☕️Installing...\r\nnpm ERR! code ERESOLVE\r\nnpm ERR! ERESOLVE unable to resolve dependency tree\r\nnpm ERR! \r\nnpm ERR! While resolving: js-common@1.0.0\r\nnpm ERR! Found: eslint@9.3.0\r\nnpm ERR! node_modules/eslint\r\nnpm ERR!   dev eslint@\"9.x\" from the root project\r\nnpm ERR! \r\nnpm ERR! Could not resolve dependency:\r\nnpm ERR! peer eslint@\"^8.56.0\" from typescript-eslint@7.10.0\r\nnpm ERR! node_modules/typescript-eslint\r\nnpm ERR!   dev typescript-eslint@\"*\" from the root project\r\nnpm ERR! \r\nnpm ERR! Fix the upstream dependency conflict, or retry\r\nnpm ERR! this command with --force or --legacy-peer-deps\r\nnpm ERR! to accept an incorrect (and potentially broken) dependency resolution.\r\nnpm ERR! \r\nnpm ERR! \r\nnpm ERR! For a full report see:\r\nnpm ERR! /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-eresolve-report.txt\r\n\r\nnpm ERR! A complete log of this run can be found in: /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-debug-0.log\r\nA config file was generated, but the config file itself may not follow your linting rules.\n\n### Link to Minimal Reproducible Example\n\nhttps://github.com/diberry/eslint9-examples/tree/diberry/feature-examples/ts-common\n\n### Participation\n\n- [X] I am willing to submit a pull request for this issue.\n\n### Additional comments\n\nThis is a minimal path which fails. ",
+          "reactions": {
+            "url": "https://api.github.com/repos/eslint/eslint/issues/18487/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/eslint/eslint/issues/18487/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:diberry+created:2024-05-22..2024-05-22",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:dfberry+created:2024-05-22..2024-05-22",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:diberry+created:2024-05-22..2024-05-22",
+    "user": "diberry",
+    "results": {
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/eslint/eslint/issues/18487",
+          "repository_url": "https://api.github.com/repos/eslint/eslint",
+          "labels_url": "https://api.github.com/repos/eslint/eslint/issues/18487/labels{/name}",
+          "comments_url": "https://api.github.com/repos/eslint/eslint/issues/18487/comments",
+          "events_url": "https://api.github.com/repos/eslint/eslint/issues/18487/events",
+          "html_url": "https://github.com/eslint/eslint/issues/18487",
+          "id": 2311309976,
+          "node_id": "I_kwDOAKjKDc6Jw8qY",
+          "number": 18487,
+          "title": "Bug: Eslint 9 CLI doest work",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 45711350,
+              "node_id": "MDU6TGFiZWw0NTcxMTM1MA==",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/bug",
+              "name": "bug",
+              "color": "fc2929",
+              "default": true,
+              "description": "ESLint is working incorrectly"
+            },
+            {
+              "id": 2786804245,
+              "node_id": "MDU6TGFiZWwyNzg2ODA0MjQ1",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/repro:needed",
+              "name": "repro:needed",
+              "color": "136971",
+              "default": false,
+              "description": ""
+            }
+          ],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 1,
+          "created_at": "2024-05-22T19:20:19Z",
+          "updated_at": "2024-05-22T19:52:40Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "### Environment\n\nNode version: v20.13.1\r\nnpm version: 10.5.2\r\nLocal ESLint version: \r\nGlobal ESLint version: \r\nOperating System: \r\n\n\n### What parser are you using?\n\nOther\n\n### What did you do?\n\n<details>\r\n<summary>Configuration</summary>\r\n\r\nInstall fails\r\n\r\n</details>\r\n\r\n```\r\nnpm init @eslint/config@latest\r\n```\r\n\r\n\n\n### What did you expect to happen?\n\nInstall succeeds\n\n### What actually happened?\n\ndiberry ➜ /workspaces/eslint9-examples/ts-esm (diberry/feature-examples) $ npm init @eslint/config@latest\r\n✔ How would you like to use ESLint? · problems\r\n✔ What type of modules does your project use? · esm\r\n✔ Which framework does your project use? · none\r\n✔ Does your project use TypeScript? · typescript\r\n✔ Where does your code run? · browser\r\nThe config that you've selected requires the following dependencies:\r\n\r\neslint@9.x, globals, @eslint/js, typescript-eslint\r\n✔ Would you like to install them now? · No / Yes\r\n✔ Which package manager do you want to use? · npm\r\n☕️Installing...\r\nnpm ERR! code ERESOLVE\r\nnpm ERR! ERESOLVE unable to resolve dependency tree\r\nnpm ERR! \r\nnpm ERR! While resolving: js-common@1.0.0\r\nnpm ERR! Found: eslint@9.3.0\r\nnpm ERR! node_modules/eslint\r\nnpm ERR!   dev eslint@\"9.x\" from the root project\r\nnpm ERR! \r\nnpm ERR! Could not resolve dependency:\r\nnpm ERR! peer eslint@\"^8.56.0\" from typescript-eslint@7.10.0\r\nnpm ERR! node_modules/typescript-eslint\r\nnpm ERR!   dev typescript-eslint@\"*\" from the root project\r\nnpm ERR! \r\nnpm ERR! Fix the upstream dependency conflict, or retry\r\nnpm ERR! this command with --force or --legacy-peer-deps\r\nnpm ERR! to accept an incorrect (and potentially broken) dependency resolution.\r\nnpm ERR! \r\nnpm ERR! \r\nnpm ERR! For a full report see:\r\nnpm ERR! /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-eresolve-report.txt\r\n\r\nnpm ERR! A complete log of this run can be found in: /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-debug-0.log\r\nA config file was generated, but the config file itself may not follow your linting rules.\n\n### Link to Minimal Reproducible Example\n\nhttps://github.com/diberry/eslint9-examples/tree/diberry/feature-examples/ts-common\n\n### Participation\n\n- [X] I am willing to submit a pull request for this issue.\n\n### Additional comments\n\nThis is a minimal path which fails. ",
+          "reactions": {
+            "url": "https://api.github.com/repos/eslint/eslint/issues/18487/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/eslint/eslint/issues/18487/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77/events",
+          "html_url": "https://github.com/Azure-Samples/serverless-chat-langchainjs/pull/77",
+          "id": 2310832385,
+          "node_id": "PR_kwDOLOwDjM5wOD8S",
+          "number": 77,
+          "title": "fix: update dependencies, fix api not working (fixes #74)",
+          "user": {
+            "login": "sinedied",
+            "id": 593151,
+            "node_id": "MDQ6VXNlcjU5MzE1MQ==",
+            "avatar_url": "https://avatars.githubusercontent.com/u/593151?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/sinedied",
+            "html_url": "https://github.com/sinedied",
+            "followers_url": "https://api.github.com/users/sinedied/followers",
+            "following_url": "https://api.github.com/users/sinedied/following{/other_user}",
+            "gists_url": "https://api.github.com/users/sinedied/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/sinedied/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/sinedied/subscriptions",
+            "organizations_url": "https://api.github.com/users/sinedied/orgs",
+            "repos_url": "https://api.github.com/users/sinedied/repos",
+            "events_url": "https://api.github.com/users/sinedied/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/sinedied/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-22T15:23:28Z",
+          "updated_at": "2024-05-22T15:23:37Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/pulls/77",
+            "html_url": "https://github.com/Azure-Samples/serverless-chat-langchainjs/pull/77",
+            "diff_url": "https://github.com/Azure-Samples/serverless-chat-langchainjs/pull/77.diff",
+            "patch_url": "https://github.com/Azure-Samples/serverless-chat-langchainjs/pull/77.patch",
+            "merged_at": null
+          },
+          "body": "## Purpose\r\n\r\n\r\n\r\n## Does this introduce a breaking change?\r\n\r\n<!-- Mark one with an \"x\". -->\r\n\r\n```\r\n[ ] Yes\r\n[x] No\r\n```\r\n\r\n## Pull Request Type\r\n\r\nWhat kind of change does this Pull Request introduce?\r\n\r\n<!-- Please check the one that applies to this PR using \"x\". -->\r\n\r\n```\r\n[x] Bugfix\r\n[ ] Feature\r\n[ ] Code style update (formatting, local variables)\r\n[ ] Refactoring (no functional changes, no api changes)\r\n[ ] Documentation content changes\r\n[ ] Other... Please describe:\r\n```\r\n\r\n## How to Test\r\n\r\n- Get the code\r\n\r\n```\r\ngit clone [repo-address]\r\ncd [repo-name]\r\ngit checkout [branch-name]\r\nnpm install\r\n```\r\n\r\n- Test the code\r\n<!-- Add steps to run the tests suite and/or manually test -->\r\n\r\n```\r\n\r\n```\r\n\r\n## What to Check\r\n\r\nVerify that the following are valid\r\n\r\n- ...\r\n\r\n## Other Information\r\n\r\n<!-- Add any other helpful information that may be needed here. -->\r\n",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/serverless-chat-langchainjs/issues/77/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:dfberry+created:2024-05-22..2024-05-22",
+    "user": "dfberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/eslint/eslint/issues/18487",
+          "repository_url": "https://api.github.com/repos/eslint/eslint",
+          "labels_url": "https://api.github.com/repos/eslint/eslint/issues/18487/labels{/name}",
+          "comments_url": "https://api.github.com/repos/eslint/eslint/issues/18487/comments",
+          "events_url": "https://api.github.com/repos/eslint/eslint/issues/18487/events",
+          "html_url": "https://github.com/eslint/eslint/issues/18487",
+          "id": 2311309976,
+          "node_id": "I_kwDOAKjKDc6Jw8qY",
+          "number": 18487,
+          "title": "Bug: Eslint 9 CLI doest work",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 45711350,
+              "node_id": "MDU6TGFiZWw0NTcxMTM1MA==",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/bug",
+              "name": "bug",
+              "color": "fc2929",
+              "default": true,
+              "description": "ESLint is working incorrectly"
+            },
+            {
+              "id": 2786804245,
+              "node_id": "MDU6TGFiZWwyNzg2ODA0MjQ1",
+              "url": "https://api.github.com/repos/eslint/eslint/labels/repro:needed",
+              "name": "repro:needed",
+              "color": "136971",
+              "default": false,
+              "description": ""
+            }
+          ],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 1,
+          "created_at": "2024-05-22T19:20:19Z",
+          "updated_at": "2024-05-22T19:52:40Z",
+          "closed_at": null,
+          "author_association": "NONE",
+          "active_lock_reason": null,
+          "body": "### Environment\n\nNode version: v20.13.1\r\nnpm version: 10.5.2\r\nLocal ESLint version: \r\nGlobal ESLint version: \r\nOperating System: \r\n\n\n### What parser are you using?\n\nOther\n\n### What did you do?\n\n<details>\r\n<summary>Configuration</summary>\r\n\r\nInstall fails\r\n\r\n</details>\r\n\r\n```\r\nnpm init @eslint/config@latest\r\n```\r\n\r\n\n\n### What did you expect to happen?\n\nInstall succeeds\n\n### What actually happened?\n\ndiberry ➜ /workspaces/eslint9-examples/ts-esm (diberry/feature-examples) $ npm init @eslint/config@latest\r\n✔ How would you like to use ESLint? · problems\r\n✔ What type of modules does your project use? · esm\r\n✔ Which framework does your project use? · none\r\n✔ Does your project use TypeScript? · typescript\r\n✔ Where does your code run? · browser\r\nThe config that you've selected requires the following dependencies:\r\n\r\neslint@9.x, globals, @eslint/js, typescript-eslint\r\n✔ Would you like to install them now? · No / Yes\r\n✔ Which package manager do you want to use? · npm\r\n☕️Installing...\r\nnpm ERR! code ERESOLVE\r\nnpm ERR! ERESOLVE unable to resolve dependency tree\r\nnpm ERR! \r\nnpm ERR! While resolving: js-common@1.0.0\r\nnpm ERR! Found: eslint@9.3.0\r\nnpm ERR! node_modules/eslint\r\nnpm ERR!   dev eslint@\"9.x\" from the root project\r\nnpm ERR! \r\nnpm ERR! Could not resolve dependency:\r\nnpm ERR! peer eslint@\"^8.56.0\" from typescript-eslint@7.10.0\r\nnpm ERR! node_modules/typescript-eslint\r\nnpm ERR!   dev typescript-eslint@\"*\" from the root project\r\nnpm ERR! \r\nnpm ERR! Fix the upstream dependency conflict, or retry\r\nnpm ERR! this command with --force or --legacy-peer-deps\r\nnpm ERR! to accept an incorrect (and potentially broken) dependency resolution.\r\nnpm ERR! \r\nnpm ERR! \r\nnpm ERR! For a full report see:\r\nnpm ERR! /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-eresolve-report.txt\r\n\r\nnpm ERR! A complete log of this run can be found in: /home/node/.npm/_logs/2024-05-22T19_00_53_111Z-debug-0.log\r\nA config file was generated, but the config file itself may not follow your linting rules.\n\n### Link to Minimal Reproducible Example\n\nhttps://github.com/diberry/eslint9-examples/tree/diberry/feature-examples/ts-common\n\n### Participation\n\n- [X] I am willing to submit a pull request for this issue.\n\n### Additional comments\n\nThis is a minimal path which fails. ",
+          "reactions": {
+            "url": "https://api.github.com/repos/eslint/eslint/issues/18487/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/eslint/eslint/issues/18487/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:diberry+created:2024-05-22..2024-05-22",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:dfberry+created:2024-05-22..2024-05-22",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:diberry+created:2024-05-22..2024-05-22",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-22",
+      "end": "2024-05-22"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:dfberry+created:2024-05-22..2024-05-22",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
