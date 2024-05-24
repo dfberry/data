@@ -1,0 +1,321 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:diberry+created:2024-05-23..2024-05-23",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:dfberry+created:2024-05-23..2024-05-23",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:diberry+created:2024-05-23..2024-05-23",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:dfberry+created:2024-05-23..2024-05-23",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:diberry+created:2024-05-23..2024-05-23",
+    "user": "diberry",
+    "results": {
+      "total_count": 2,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109",
+          "repository_url": "https://api.github.com/repos/MicrosoftDocs/node-essentials",
+          "labels_url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109/labels{/name}",
+          "comments_url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109/comments",
+          "events_url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109/events",
+          "html_url": "https://github.com/MicrosoftDocs/node-essentials/pull/109",
+          "id": 2313655089,
+          "node_id": "PR_kwDOEJO8X85wXvoE",
+          "number": 109,
+          "title": "Fix CI: multiple installs",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "closed",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-23T19:14:25Z",
+          "updated_at": "2024-05-23T21:56:48Z",
+          "closed_at": "2024-05-23T21:56:48Z",
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/pulls/109",
+            "html_url": "https://github.com/MicrosoftDocs/node-essentials/pull/109",
+            "diff_url": "https://github.com/MicrosoftDocs/node-essentials/pull/109.diff",
+            "patch_url": "https://github.com/MicrosoftDocs/node-essentials/pull/109.patch",
+            "merged_at": "2024-05-23T21:56:48Z"
+          },
+          "body": null,
+          "reactions": {
+            "url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/MicrosoftDocs/node-essentials/issues/109/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        },
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323/events",
+          "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp/pull/323",
+          "id": 2311764972,
+          "node_id": "PR_kwDOJTMLG85wRS_m",
+          "number": 323,
+          "title": "Updated branding to use \"Azure AI Search\"",
+          "user": {
+            "login": "jmatthiesen",
+            "id": 1333029,
+            "node_id": "MDQ6VXNlcjEzMzMwMjk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1333029?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jmatthiesen",
+            "html_url": "https://github.com/jmatthiesen",
+            "followers_url": "https://api.github.com/users/jmatthiesen/followers",
+            "following_url": "https://api.github.com/users/jmatthiesen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jmatthiesen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jmatthiesen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jmatthiesen/subscriptions",
+            "organizations_url": "https://api.github.com/users/jmatthiesen/orgs",
+            "repos_url": "https://api.github.com/users/jmatthiesen/repos",
+            "events_url": "https://api.github.com/users/jmatthiesen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jmatthiesen/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [
+            {
+              "id": 5355207794,
+              "node_id": "LA_kwDOJTMLG88AAAABPzH8cg",
+              "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/labels/documentation",
+              "name": "documentation",
+              "color": "0075ca",
+              "default": true,
+              "description": "Improvements or additions to documentation"
+            }
+          ],
+          "state": "open",
+          "locked": false,
+          "assignee": {
+            "login": "jmatthiesen",
+            "id": 1333029,
+            "node_id": "MDQ6VXNlcjEzMzMwMjk=",
+            "avatar_url": "https://avatars.githubusercontent.com/u/1333029?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/jmatthiesen",
+            "html_url": "https://github.com/jmatthiesen",
+            "followers_url": "https://api.github.com/users/jmatthiesen/followers",
+            "following_url": "https://api.github.com/users/jmatthiesen/following{/other_user}",
+            "gists_url": "https://api.github.com/users/jmatthiesen/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/jmatthiesen/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/jmatthiesen/subscriptions",
+            "organizations_url": "https://api.github.com/users/jmatthiesen/orgs",
+            "repos_url": "https://api.github.com/users/jmatthiesen/repos",
+            "events_url": "https://api.github.com/users/jmatthiesen/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/jmatthiesen/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "assignees": [
+            {
+              "login": "jmatthiesen",
+              "id": 1333029,
+              "node_id": "MDQ6VXNlcjEzMzMwMjk=",
+              "avatar_url": "https://avatars.githubusercontent.com/u/1333029?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/jmatthiesen",
+              "html_url": "https://github.com/jmatthiesen",
+              "followers_url": "https://api.github.com/users/jmatthiesen/followers",
+              "following_url": "https://api.github.com/users/jmatthiesen/following{/other_user}",
+              "gists_url": "https://api.github.com/users/jmatthiesen/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/jmatthiesen/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/jmatthiesen/subscriptions",
+              "organizations_url": "https://api.github.com/users/jmatthiesen/orgs",
+              "repos_url": "https://api.github.com/users/jmatthiesen/repos",
+              "events_url": "https://api.github.com/users/jmatthiesen/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/jmatthiesen/received_events",
+              "type": "User",
+              "site_admin": false
+            }
+          ],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-05-23T01:35:43Z",
+          "updated_at": "2024-05-23T01:35:44Z",
+          "closed_at": null,
+          "author_association": "COLLABORATOR",
+          "active_lock_reason": null,
+          "draft": false,
+          "pull_request": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/pulls/323",
+            "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp/pull/323",
+            "diff_url": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp/pull/323.diff",
+            "patch_url": "https://github.com/Azure-Samples/azure-search-openai-demo-csharp/pull/323.patch",
+            "merged_at": null
+          },
+          "body": "Fixes #321 - updating branding in this sample to use \"Azure AI Search\" instead of the older branding of \"Azure Cognitive Search\"\r\n\r\n## Purpose\r\nUpdating to use current branding for Azure AI Search.\r\n\r\n## Does this introduce a breaking change?\r\n```\r\n[ ] Yes\r\n[x] No\r\n```\r\n\r\n## Pull Request Type\r\nWhat kind of change does this Pull Request introduce?\r\n\r\n```\r\n[ ] Bugfix\r\n[ ] Feature\r\n[ ] Code style update (formatting, local variables)\r\n[ ] Refactoring (no functional changes, no api changes)\r\n[x] Documentation content changes\r\n[ ] Other... Please describe:\r\n```\r\n\r\n## How to Test\r\n*  Get the code, review README and descriptions in modified files.",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo-csharp/issues/323/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:dfberry+created:2024-05-23..2024-05-23",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:diberry+created:2024-05-23..2024-05-23",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:dfberry+created:2024-05-23..2024-05-23",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:diberry+created:2024-05-23..2024-05-23",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-23",
+      "end": "2024-05-23"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:dfberry+created:2024-05-23..2024-05-23",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
