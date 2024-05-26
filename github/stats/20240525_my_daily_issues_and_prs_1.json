@@ -1,0 +1,28 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-05-25",
+      "end": "2024-05-25"
+    },
+    "url": "https://api.github.com/search/issues?q=author:diberry+created:2024-05-25..2024-05-25",
+    "author": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-05-25",
+      "end": "2024-05-25"
+    },
+    "url": "https://api.github.com/search/issues?q=author:dfberry+created:2024-05-25..2024-05-25",
+    "author": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
