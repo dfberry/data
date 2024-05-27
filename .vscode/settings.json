@@ -9,12 +9,15 @@
     "[typescript]": {
       "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "azureFunctions.deploySubpath": "automation/listen-to-storage",
+    "azureFunctions.deploySubpath": "originals",
     "azureFunctions.postDeployTask": "npm install (functions)",
     "azureFunctions.projectLanguage": "TypeScript",
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
     "azureFunctions.projectLanguageModel": 4,
-    "azureFunctions.projectSubpath": "automation/listen-to-storage",
-    "azureFunctions.preDeployTask": "npm prune (functions)" // set as "true" to run 'prettier' last not first
+    "azureFunctions.projectSubpath": "originals/listen",
+    "azureFunctions.preDeployTask": "npm prune (functions)",
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    } // set as "true" to run 'prettier' last not first
   }

@@ -175,7 +175,7 @@ export type GitHubIssueSearchResponse = {
     items: GitHubIssue[];
 };
 
-export type BlobData = {
+export type BlobDataRepo = {
     dateRange: {
         start: string;
         end: string;
@@ -184,5 +184,20 @@ export type BlobData = {
     author?: string; // my history
     repo?: string; // repos
     user?: string; // my requested involvement
+    results: GitHubIssue[];
+}
+export type BlobDataItems = {
+    dateRange: {
+        start: string;
+        end: string;
+    },
+    url: string;
+    author?: string; // my history
+    user?: string; // my requested involvement
     results: GitHubIssueSearchResponse;
 }
+
+export type TransformedData = {
+    id: string;
+    type: string;
+} & GitHubIssue;

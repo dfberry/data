@@ -1,0 +1,23 @@
+[
+    {
+        "databaseName": "github_history",
+        "containers": [
+            {
+                "name": "data_processing",
+                "partitionKey": {
+                    "paths": [
+                        "/url"
+                    ]
+                }
+            },
+            {
+                "name": "issues",
+                "partitionKey": {
+                    "paths": [
+                        "/type_org_repo_issue"
+                    ]
+                }
+            }
+        ]
+    }
+]

@@ -29,6 +29,18 @@
             "type": "node"
         },
         {
+            "name": "process",
+            "request": "launch",
+            "runtimeArgs": [
+                "--prefix",
+                "scripts/storage",
+                "run",
+                "process"
+            ],
+            "runtimeExecutable": "npm",
+            "type": "node"
+        },
+        {
             "name": "Attach to Node Functions",
             "type": "node",
             "request": "attach",

@@ -1,33 +1,39 @@
-import { BlobData } from './models';
+import { blob } from 'stream/consumers';
+import { BlobDataItems, BlobDataRepo, GitHubIssue, TransformedData } from './models';
 
-export function transformUploadedToDocs(blobDataArray: BlobData[], name: string) {
+// Regardless of type, find the GitHubIssue[], and transform it
+export function transformUploadedToDocs(blobDataArray: BlobDataRepo[] | BlobDataItems[], name: string, logger): TransformedData[] {
 
     try {
 
         let transformedDocs = [];
 
-        // Get the inner docs to send to a different DB table
         for (const element of blobDataArray) {
+            let innerDocs: GitHubIssue[];
 
-            const total_count = element.results.total_count;
+            innerDocs = isBlobDataItems(element) ? element.results.items : element.results;
 
-            console.log(`Num Data from blob: ${total_count}`);
-
-            const innerDocs = element.results.items;
+            if (!innerDocs || innerDocs.length === 0) {
+                logger(`No inner docs found for ${element.url}`);
+                continue;
+            }
 
             for (const innerDoc of innerDocs) {
-
                 const issuesDoc = {
                     type: name,
                     ...innerDoc,
-                    id: innerDoc.id.toString() // why is this required
+                    id: innerDoc.id.toString()
                 }
-                console.log(`Inner doc: ${innerDoc.id} - ${innerDoc.url}`);
+                logger(`Inner doc: ${innerDoc.id} - ${innerDoc.url}`);
                 transformedDocs.push(issuesDoc);
             }
         }
         return transformedDocs;
     } catch (error) {
-        console.log(`transformUploadedToDocs - Error transforming data: ${error}`);
+        logger(`transformUploadedToDocs - Error transforming data: ${error}`);
+        throw error;
     }
+}
+function isBlobDataItems(element: BlobDataRepo | BlobDataItems): element is BlobDataItems {
+    return 'items' in element.results;
 }

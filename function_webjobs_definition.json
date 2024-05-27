@@ -1,0 +1,9 @@
+[
+    {
+        "containerName": "azure-webjobs-hosts",
+        "paths": [
+            "blobreceipts/macbookpro3-927541989/Host.Functions.listen-to-storage",
+            "blobreceipts/dfberry-history/Host.Functions.listen-to-storage"
+        ]
+    }
+]

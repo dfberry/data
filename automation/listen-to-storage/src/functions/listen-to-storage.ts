@@ -2,8 +2,8 @@ import { app, InvocationContext, output } from "@azure/functions";
 import { v4 as uuidv4 } from 'uuid';
 
 const sendToCosmosDb = output.cosmosDB({
-    databaseName: 'github_history',
-    containerName: 'data_processing',
+    databaseName: '%AZURE_COSMOSDB_DATABASE_NAME%',
+    containerName: '%AZURE_COSMOSDB_CONTAINER_NAME_PROCESSING%',
     connection: 'AZURE_COSMOSDB_CONNECTION_STRING'
 });
 
@@ -25,7 +25,7 @@ export async function listenToStorage(blob: Buffer, context: InvocationContext):
             dateUploaded: new Date().toISOString(),
         }
 
-        context.log(`Document to crete for CosmosDB: ${JSON.stringify(docForDatabase)}`)
+        context.log(`Document to create for CosmosDB: ${JSON.stringify(docForDatabase)}`)
         context.extraOutputs.set(sendToCosmosDb, docForDatabase);
 
         context.log('Document created for CosmosDB');
@@ -35,7 +35,7 @@ export async function listenToStorage(blob: Buffer, context: InvocationContext):
 }
 
 app.storageBlob('listen-to-storage', {
-    path: 'my-history/{name}',
+    path: '%AZURE_STORAGE_CONTAINER_NAME%/{name}',
     connection: 'AZURE_STORAGE_CONNECTION_STRING',
     extraOutputs: [sendToCosmosDb],
     handler: listenToStorage

@@ -1,24 +1,29 @@
-const { CosmosClient } = require("@azure/cosmos");
+import { CosmosClient } from "@azure/cosmos";
 
-const client = new CosmosClient(process.env.AZURE_COSMOSDB_CONNECTION_STRING);
-const databaseName = 'github_history';
+export class CosmosDb {
 
-export async function getContainerClient(containerName: string, logger) {
-    try {
+    private logger: (message?: any, ...optionalParams: any[]) => void;
+
+    constructor(logger: (message?: any, ...optionalParams: any[]) => void = console.log) {
+        this.logger = logger;
+    }
+
+    public async getContainerClient(connectionString: string, databaseName: string, containerName: string) {
+
+        if (!connectionString) {
+            throw new Error('Connection string is required');
+        }
+
+        const client = new CosmosClient(connectionString);
         const { database } = await client.databases.createIfNotExists({ id: databaseName });
         const { container } = await database.containers.createIfNotExists({ id: containerName });
+
         return container;
-    } catch (error) {
-        logger(`getContainerClient - Error inserting document: ${error}`);
     }
-}
 
-export async function insertIntoDb(containerClient, doc) {
+    public async insertIntoDb(containerClient, doc) {
 
-    try {
         await containerClient.items.create(doc);
-    } catch (error) {
-        console.log(`insertIntoDb - Error inserting document: ${error}`);
-    }
 
+    }
 }
