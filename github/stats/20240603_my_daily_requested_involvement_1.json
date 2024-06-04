@@ -1,0 +1,194 @@
+[
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:diberry+created:2024-06-03..2024-06-03",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=commenter:dfberry+created:2024-06-03..2024-06-03",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:diberry+created:2024-06-03..2024-06-03",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=mentions:dfberry+created:2024-06-03..2024-06-03",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:diberry+created:2024-06-03..2024-06-03",
+    "user": "diberry",
+    "results": {
+      "total_count": 1,
+      "incomplete_results": false,
+      "items": [
+        {
+          "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678",
+          "repository_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo",
+          "labels_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678/labels{/name}",
+          "comments_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678/comments",
+          "events_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678/events",
+          "html_url": "https://github.com/Azure-Samples/azure-search-openai-demo/issues/1678",
+          "id": 2332027788,
+          "node_id": "I_kwDOI7h_Ps6K_-uM",
+          "number": 1678,
+          "title": "Add bicep description for infra/private-endpoints.bicep",
+          "user": {
+            "login": "diberry",
+            "id": 41597107,
+            "node_id": "MDQ6VXNlcjQxNTk3MTA3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/41597107?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/diberry",
+            "html_url": "https://github.com/diberry",
+            "followers_url": "https://api.github.com/users/diberry/followers",
+            "following_url": "https://api.github.com/users/diberry/following{/other_user}",
+            "gists_url": "https://api.github.com/users/diberry/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/diberry/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/diberry/subscriptions",
+            "organizations_url": "https://api.github.com/users/diberry/orgs",
+            "repos_url": "https://api.github.com/users/diberry/repos",
+            "events_url": "https://api.github.com/users/diberry/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/diberry/received_events",
+            "type": "User",
+            "site_admin": false
+          },
+          "labels": [],
+          "state": "open",
+          "locked": false,
+          "assignee": null,
+          "assignees": [],
+          "milestone": null,
+          "comments": 0,
+          "created_at": "2024-06-03T20:49:35Z",
+          "updated_at": "2024-06-03T20:49:35Z",
+          "closed_at": null,
+          "author_association": "CONTRIBUTOR",
+          "active_lock_reason": null,
+          "body": "<!--\r\nIF SUFFICIENT INFORMATION IS NOT PROVIDED VIA THE FOLLOWING TEMPLATE THE ISSUE MIGHT BE CLOSED WITHOUT FURTHER CONSIDERATION OR INVESTIGATION\r\n-->\r\n> Please provide us with the following information:\r\n> ---------------------------------------------------------------\r\n\r\n### This issue is for a: (mark with an `x`)\r\n```\r\n- [ ] bug report -> please search issues before submitting\r\n- [x ] feature request\r\n- [ ] documentation issue or request\r\n- [ ] regression (a behavior that used to work and stopped in a new release)\r\n```\r\n\r\n### Minimal steps to reproduce\r\n> Adding a Bicep description helps me figure out what the file is for and how in is part of the VPN story. \r\n\r\n### Any log messages given by the failure\r\n>\r\n\r\n### Expected/desired behavior\r\n>\r\n\r\n### OS and Version?\r\n> Windows 7, 8 or 10. Linux (which distribution). macOS (Yosemite? El Capitan? Sierra?)\r\n\r\n### azd version?\r\n> run `azd version` and copy paste here.\r\n\r\n### Versions\r\n>\r\n\r\n### Mention any other details that might be useful\r\n\r\n> ---------------------------------------------------------------\r\n> Thanks! We'll be in touch soon.\r\n",
+          "reactions": {
+            "url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678/reactions",
+            "total_count": 0,
+            "+1": 0,
+            "-1": 0,
+            "laugh": 0,
+            "hooray": 0,
+            "confused": 0,
+            "heart": 0,
+            "rocket": 0,
+            "eyes": 0
+          },
+          "timeline_url": "https://api.github.com/repos/Azure-Samples/azure-search-openai-demo/issues/1678/timeline",
+          "performed_via_github_app": null,
+          "state_reason": null,
+          "score": 1
+        }
+      ]
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=involves:dfberry+created:2024-06-03..2024-06-03",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:diberry+created:2024-06-03..2024-06-03",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=reviewed-by:dfberry+created:2024-06-03..2024-06-03",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:diberry+created:2024-06-03..2024-06-03",
+    "user": "diberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  },
+  {
+    "dateRange": {
+      "start": "2024-06-03",
+      "end": "2024-06-03"
+    },
+    "url": "https://api.github.com/search/issues?q=assignee:dfberry+created:2024-06-03..2024-06-03",
+    "user": "dfberry",
+    "results": {
+      "total_count": 0,
+      "incomplete_results": false,
+      "items": []
+    }
+  }
+]
