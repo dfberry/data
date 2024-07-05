@@ -19,5 +19,8 @@
     "azureFunctions.preDeployTask": "npm prune (functions)",
     "[json]": {
       "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
     } // set as "true" to run 'prettier' last not first
   }
