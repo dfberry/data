@@ -2,14 +2,14 @@ import RepoList from '@/components/RepoList'
 import db from '@/lib/db'
 
 const getData = async () => {
-  const todos = await db.repo.findMany({
+  const repos = await db.repo.findMany({
     where: {},
     orderBy: {
       createdAt: 'desc',
     },
   })
 
-  return todos
+  return repos
 }
 
 const RepoPage = async () => {

@@ -20,3 +20,10 @@ export const createNewRepo = async (data: FormData) => {
     revalidatePath('/profiles/repos')
   }
 }
+
+export const deleteRepo = async (id: string) => {
+    await db.repo.delete({
+      where: { id }
+    })
+    revalidatePath('/profiles/repos')
+  }
