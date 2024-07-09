@@ -77,3 +77,9 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
+
+model Repo {
+  id String @id @default(uuid())
+  createdAt DateTime @default(now())
+  url String @unique
+}

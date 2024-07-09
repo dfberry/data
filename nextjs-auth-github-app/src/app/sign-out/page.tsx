@@ -8,6 +8,10 @@ const SignOutPage = async () => {
   const session = await getServerSession(options);
 
   if (!session) {
+    console.log(`SignOutPage: !session so redirect to root`)
+  }
+
+  if (!session) {
     redirect("/");
   } else {
     return (

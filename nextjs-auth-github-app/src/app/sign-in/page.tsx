@@ -8,6 +8,10 @@ const SignInPage = async () => {
   const session = await getServerSession(options);
 
   if (session) {
+    console.log(`SignInPage: session so redirect to profile page`)
+  }
+
+  if (session) {
     redirect("/profile");
   } else {
     return (

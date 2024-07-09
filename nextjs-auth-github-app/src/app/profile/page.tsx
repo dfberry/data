@@ -8,7 +8,9 @@ import GitHubSearchIssuesDisplay from "@/components/GitHubSearchIssues"
 
 
 const ProfilePage = async () => {
+  console.log("ProfilePage");
   const session = await getServerSession(options);
+  console.log("Session:", JSON.stringify(session, null, 2));
   //const org = "dfberry";
   //let repos = [];
   //repos = (session?.accessToken) ? await fetchUserRepos(org, session?.accessToken) : [];
@@ -42,7 +44,7 @@ const ProfilePage = async () => {
             priority={true}
           />
         ) : null}
-
+        {JSON.stringify(session, null, 2)}
       </div>
     </div>
   );

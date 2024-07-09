@@ -1,20 +1,18 @@
 import GitHubProvider from "next-auth/providers/github";
 import type { AuthOptions, DefaultUser, DefaultSession } from "next-auth";
+import NextAuth from "next-auth";
 
 // DB for session
-// import { PrismaAdapter } from "@next-auth/prisma-adapter"
-// import { PrismaClient } from "@prisma/client"
-// const prisma = new PrismaClient()
-
-//import { PrismaClient } from "@prisma/client"
-//const prisma = new PrismaClient()
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
+const prisma = new PrismaClient()
 
 export const options: AuthOptions = {
   pages: {
     signIn: "/sign-out",
     signOut: "/sign-out"
   },
-  //  adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GitHubProvider({
       name: "GitHub",
@@ -24,6 +22,11 @@ export const options: AuthOptions = {
   ],
   callbacks: {
     jwt({ token, trigger, session, account }) {
+
+      console.log("Token-token:", JSON.stringify(token, null, 2))
+      console.log("Token-session:", JSON.stringify(session, null, 2))
+      console.log("Token-account:", JSON.stringify(account, null, 2))
+
       // Persist the OAuth access_token to the token right after signin
       if (account) {
         token.accessToken = account.access_token
@@ -34,6 +37,11 @@ export const options: AuthOptions = {
       return token
     },
     async session({ session, token, user }) {
+
+      console.log("Session-Session:", JSON.stringify(session, null, 2))
+      console.log("Session-Token:", JSON.stringify(token, null, 2))
+      console.log("Session-user:", JSON.stringify(user, null, 2))
+
       if (token?.accessToken) {
         session.accessToken = token.accessToken || ''
       }
@@ -50,8 +58,10 @@ export const options: AuthOptions = {
       }
       return session
     },
+
   },
 };
+
 
 declare module "next-auth/jwt" {
   interface JWT {
@@ -81,3 +91,5 @@ declare module "next-auth/jwt" {
     role?: 'admin' | 'user'
   }
 }
+
+//export const { handlers, signIn, signOut, auth } = NextAuth(options);
