@@ -4,32 +4,38 @@ import db from '@/lib/db'
 import { revalidatePath } from 'next/cache'
 import { RepoType, RepoSchema } from '@/lib/schema/repo'
 import Repo from '@/components/GitHub/Repo/Repo'
+import Prisma from '@prisma/client'
 
-
-export const createNewRepo = async (data: FormData) => {
+export const createNewRepo = async (userId: string, data: FormData) => {
   const newRepo = data.get('repo') as string
-  if(!newRepo) return { success: false, message: 'Empty repo name' }
+  if (!newRepo) return { success: false, message: 'Empty repo name' }
 
   console.log(`newRepo: ${newRepo}`)
 
   const { error: zodError } = RepoSchema.safeParse({ url: newRepo })
   if (zodError) {
     console.log('createNewRepo: Invalid url ', zodError.format());
-    return ({ success: false, message: `invalid input`, error: zodError.format()});
+    return ({ success: false, message: `invalid input`, error: zodError.format() });
   }
 
-  const existingRepo = await db.repo.findUnique({
-    where: { url: newRepo },
+  const whereParams: Prisma.Prisma.RepoWhereInput = {
+    url: newRepo,
+    userId
+  };
+
+  const existingRepo = await db.repo.findFirst({
+    where: whereParams,
   });
 
   if (existingRepo) {
     console.log('Repo already exists');
-    return { success: false, message: 'Repo already exists' };
+    return { success: false, message: 'User already has repo' };
   }
 
   if (newRepo) {
     await db.repo.create({
       data: {
+        userId: userId,
         url: newRepo,
       },
     });
@@ -43,9 +49,34 @@ export const createNewRepo = async (data: FormData) => {
   }
 }
 
-export const deleteRepo = async (id: string) => {
-    await db.repo.delete({
-      where: { id }
-    })
-    revalidatePath('/profiles/github')
+export const deleteRepo = async (userId: string, repoId: string) => {
+
+  const whereParams: Prisma.Prisma.RepoWhereInput = {
+    id: repoId,
+    userId
+  };
+
+  const existingRepo = await db.repo.findFirst({
+    where: whereParams,
+  });
+
+  if (!existingRepo) {
+    console.log('Repo does not exist');
+    throw new Error('Repo does not exist');
   }
+  await db.repo.delete({
+    where: { id: existingRepo.id }
+  })
+  revalidatePath('/profiles/github')
+}
+
+export const getReposByUser = async (userId: string) => {
+  const whereParams: Prisma.Prisma.RepoWhereInput = {
+    userId
+  };
+
+  const repos = await db.repo.findMany({
+    where: { userId }
+  })
+  return repos
+}

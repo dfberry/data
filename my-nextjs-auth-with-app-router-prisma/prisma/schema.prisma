@@ -16,6 +16,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  repos         Repo[]
+
   // Optional for WebAuthn support
   Authenticator Authenticator[]
  
@@ -79,7 +81,11 @@ model Authenticator {
 }
 
 model Repo {
-  id String @id @default(uuid())
-  createdAt DateTime @default(now())
-  url String @unique
+  id          String @id @default(cuid())
+  userId      String
+  url         String @unique
+  
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
 }
