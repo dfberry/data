@@ -4,6 +4,7 @@ import { FaGithub } from "react-icons/fa"; // Import GitHub icon from React Icon
 import { RiGitRepositoryCommitsLine } from "react-icons/ri";
 import { GiShadowFollower } from "react-icons/gi";
 import { SlUserFollowing } from "react-icons/sl";
+import SignOutComponent from "./SignOut";
 
 type ProfileComponentProps = {
 	session: any;
@@ -61,11 +62,11 @@ export default function ProfileComponent({ session, user, githubProfile }: Profi
 				</div>
 
 				<div id="bottom-nav" className="flex justify-between items-center mt-4">
-					<Link prefetch={false} href={`https://github.com/${githubProfile
-						.login}`} className="bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center">
+					<Link prefetch={false} href={`https://github.com/${githubProfile.login}`} className="bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center">
 						<FaGithub className="h-6 w-6 mr-2" />
 						<span>GitHub</span> {/* Add text to the button */}
 					</Link>
+					<SignOutComponent />
 				</div>
 			</div>
 		</div>
