@@ -6,6 +6,8 @@ export async function GET(): Promise<Response> {
 	const state = generateState();
 	const url = await github.createAuthorizationURL(state);
 
+	console.log("GET /login/github", { state, url });
+
 	cookies().set("github_oauth_state", state, {
 		path: "/",
 		secure: process.env.NODE_ENV === "production",

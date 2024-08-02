@@ -46,21 +46,32 @@ export default function ProfileComponent({ session, user, githubProfile }: Profi
 				</div>
 				<p className="mt-4 text-gray-800">{githubProfile
 					.bio}</p>
-				<div id="repos" className="mt-6 bg-blue-500 p-4 rounded-lg flex justify-between items-center">
-					<div className="text-center" title="Number of public repositories">
+				<div id="repos" className="mt-6 bg-blue-500 p-4 rounded-lg flex items-center space-x-4">
+					<div className="text-left" title="Number of public repositories">
 						<h2 className="text-xl font-semibold text-white">{githubProfile.public_repos}</h2>
 						<RiGitRepositoryCommitsLine className="h-6 w-6 mx-auto text-white" />
 					</div>
-					<div className="text-center">
+					<div className="text-left">
 						<h2 className="text-xl font-semibold text-white">{githubProfile.followers}</h2>
 						<GiShadowFollower className="h-6 w-6 mx-auto text-white" />
 					</div>
-					<div className="text-center">
+					<div className="text-left">
 						<h2 className="text-xl font-semibold text-white">{githubProfile.following}</h2>
 						<SlUserFollowing className="h-6 w-6 mx-auto text-white" />
 					</div>
 				</div>
+				<div id="feature-nav" className="flex justify-between items-center mt-4">
+					<Link prefetch={false} href={`/query/issues`} className="bg-green-500 text-white py-2 px-4 rounded-lg flex items-center">
+						<span>Issues</span> {/* Add text to the button */}
 
+					</Link>
+					<Link prefetch={false} href={`/query/pr`} className="bg-green-500 text-white py-2 px-4 rounded-lg flex items-center">
+						<span>PRs</span> {/* Add text to the button */}
+					</Link>
+					<Link prefetch={false} href={`/query/repos`} className="bg-green-500 text-white py-2 px-4 rounded-lg flex items-center">
+						<span>Repos</span> {/* Add text to the button */}
+					</Link>
+				</div>
 				<div id="bottom-nav" className="flex justify-between items-center mt-4">
 					<Link prefetch={false} href={`https://github.com/${githubProfile.login}`} className="bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center">
 						<FaGithub className="h-6 w-6 mr-2" />

@@ -4,7 +4,7 @@ import { drizzle } from "drizzle-orm/node-postgres";
 import { userTable, sessionTable, tokenTable } from "./db.schema";
 import { eq } from "drizzle-orm";
 import EncryptionService from "../encrypt";
-import { GitHubUser } from "../github/github";
+import { GitHubUser } from "../github/user";
 
 const connectionString = process.env.DATABASE_URL!;
 
@@ -22,7 +22,7 @@ export interface DatabaseUser {
     githubId: string;
 }
 
-async function updateDbToken(dbUserId: string, encryptedAccessToken: string):Promise<void> {
+async function updateDbToken(dbUserId: string, encryptedAccessToken: string): Promise<void> {
 
     if (!dbUserId || !encryptedAccessToken) throw new Error("updateDbToken: Invalid arguments");
 
@@ -48,8 +48,8 @@ async function insertDbToken(dbUserId: string, accessToken: string): Promise<voi
     // .execute();
 
     const deletedTokens = await db.delete(tokenTable)
-    .where(eq(tokenTable.userId, encryptedUserId))
-    .execute();
+        .where(eq(tokenTable.userId, encryptedUserId))
+        .execute();
     console.log(`insertDbToken deletedTokens: `, deletedTokens);
 
     const insertedToken = await db.insert(tokenTable)
@@ -125,7 +125,7 @@ async function getDbTokenByDbUserId(dbUserId: string): Promise<string | null> {
     }
     const encryptor = new EncryptionService();
     const decryptedToken = encryptor.decrypt(row[0].encryptedAccessToken);
-    
+
     console.log(`getDbTokenByDbUserId decrypted access token: ${decryptedToken}`);
 
     return decryptedToken;
