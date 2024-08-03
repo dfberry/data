@@ -3,7 +3,6 @@ import { getDbTokenByDbUserId } from "@/lib/db/db";
 import GitHubRepoIssues, { FetchIssuesParams, GitHubIssue } from "@/lib/github/repos";
 import IssueCard from "@/components/github/Issue";
 import { getLastDaysRange } from '@/lib/datetime';
-import { DateTimeReturnType } from '@/lib/datetime';
 
 export default async function QueryReposPage() {
 
@@ -28,8 +27,8 @@ export default async function QueryReposPage() {
 		repo: 'MicrosoftDocs/node-essentials',
 		dateRange:
 		{
-			start: last30Days.start,
-			end: last30Days.end
+			start: last30Days.startDateTime!,
+			end: last30Days.endDateTime!
 		},
 		// state: 'open',
 		// labels: ['bug', 'enhancement'],

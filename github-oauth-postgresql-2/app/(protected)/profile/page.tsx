@@ -1,6 +1,9 @@
 import useRequireAuth from "@/hooks/useRequireAuth";
 
 export default async function ProfilePage() {
+
+
+
 	const { user, session, isAuthorized } = await useRequireAuth();
 	return (
 		<>

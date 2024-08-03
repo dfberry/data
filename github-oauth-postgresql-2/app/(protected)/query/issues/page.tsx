@@ -5,7 +5,8 @@ import { GitHubIssue } from "@/lib/github/issues";
 import IssueCard from "@/components/github/Issue";
 import GitHubUserService from '@/lib/github/user';
 import { getLastDaysRange } from '@/lib/datetime';
-import { DateTimeReturnType } from '@/lib/datetime';
+import { LastDaysReturn } from '@/lib/datetime';
+
 export default async function QueryIssuesPage() {
 
 	console.log("QueryPage: Start");
@@ -24,11 +25,11 @@ export default async function QueryIssuesPage() {
 		return null;
 	}
 	const { login } = await GitHubUserService.getGithHubUserBySessionResult({ session, user });
-	const last30Days = getLastDaysRange();
+	const last30Days: LastDaysReturn = getLastDaysRange();
 
 	const searchParams = {
 		[GitHubSearchDefaultQuery.AUTHOR]: login,
-		[GitHubSearchDefaultQuery.CREATED]: last30Days.string
+		[GitHubSearchDefaultQuery.CREATED]: `${last30Days.endDate}...${last30Days.startDate}`,
 	};
 
 

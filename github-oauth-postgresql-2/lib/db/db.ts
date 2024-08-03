@@ -1,17 +1,11 @@
 import { DrizzlePostgreSQLAdapter } from "@lucia-auth/adapter-drizzle";
 import pg from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
-import { userTable, sessionTable, tokenTable } from "./db.schema";
+import { userTable, sessionTable, tokenTable, userWatchRepoTable } from "./db.schema";
 import { eq } from "drizzle-orm";
 import EncryptionService from "../encrypt";
 import { GitHubUser } from "../github/user";
-
-const connectionString = process.env.DATABASE_URL!;
-
-const pool = new pg.Pool({
-    connectionString: connectionString
-});
-const db = drizzle(pool);
+import { db } from "./connection";
 
 const adapter = new DrizzlePostgreSQLAdapter(db, sessionTable, userTable);
 

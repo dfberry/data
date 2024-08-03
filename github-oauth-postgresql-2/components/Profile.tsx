@@ -1,5 +1,6 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaGithub } from "react-icons/fa"; // Import GitHub icon from React Icons
 import { RiGitRepositoryCommitsLine } from "react-icons/ri";
 import { GiShadowFollower } from "react-icons/gi";
@@ -30,13 +31,15 @@ export default function ProfileComponent({ session, user, githubProfile }: Profi
 		<div className="profile-container">
 			<div className="bg-white shadow-md rounded-lg p-6">
 				<div className="flex items-center space-x-4">
-					<img
+
+					<Image
 						className="w-16 h-16 rounded-full"
-						src={githubProfile
-							.avatar_url}
-						alt={`${githubProfile
-							.login}'s avatar`}
+						src={githubProfile.avatar_url}
+						alt={`${githubProfile.login}'s avatar`}
+						width={64}
+						height={64}
 					/>
+
 					<div>
 						<h1 className="text-2xl font-bold">{githubProfile
 							.name}</h1>

@@ -10,7 +10,8 @@
 		"test": "jest",
 		"db:generate": "drizzle-kit generate",
 		"db:migrate": "drizzle-kit migrate",
-		"db:push": "drizzle-kit push"
+		"db:push": "drizzle-kit push",
+		"db:up": "drizzle-kit up"
 	},
 	"dependencies": {
 		"@lucia-auth/adapter-drizzle": "^1.0.7",

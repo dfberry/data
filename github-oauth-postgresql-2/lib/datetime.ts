@@ -1,3 +1,5 @@
+import { start } from "repl";
+
 export enum DateTimeReturnType {
     String,
     Object,
@@ -14,20 +16,22 @@ const formatDate = (date: Date): string => {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 };
-export const getLastDaysRange = (returnType: DateTimeReturnType = DateTimeReturnType.All, days: number = 30): string | Object => {
+export interface LastDaysReturn {
+    startDateTime?: string,
+    endDateTime?: string,
+    startDate?: string,
+    endDate?: string
+}
+export const getLastDaysRange = (days: number = 30): LastDaysReturn => {
     const currentDate = new Date();
     const pastDate = new Date();
     pastDate.setDate(currentDate.getDate() - days);
 
-    const startDate = returnType === DateTimeReturnType.Object ? formatDateTime(pastDate) : formatDate(pastDate);
-    const endDate = returnType === DateTimeReturnType.Object ? formatDateTime(currentDate) : formatDate(currentDate);
+    const startDateTime = formatDateTime(pastDate);
+    const endDateTime = formatDateTime(currentDate);
 
-    switch (returnType) {
-        case DateTimeReturnType.Object:
-            return { start: startDate, end: endDate };
-        case DateTimeReturnType.String:
-            return `${startDate}..${endDate}`;
-        default:
-            return { start: startDate, end: endDate, string: `${startDate}..${endDate}` };
-    }
+    const startDate = formatDate(pastDate);
+    const endDate = formatDate(currentDate);
+
+    return { startDateTime: startDateTime, endDateTime: endDateTime, startDate: startDate, endDate: endDate };
 };
