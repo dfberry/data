@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { lucia, validateRequest } from "@/lib/auth/auth";
 import { deleteDbTokenByDbUserId } from "@/lib/db/db";
 import { cookies } from "next/headers";
+import { Suspense } from "react";
 
 interface ActionResult {
     error: string | null;
@@ -34,11 +35,12 @@ export default async function SignOutComponent() {
         return redirect("/login");
     }
     return (
-
-        <form action={logout} >
-            <button className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
-                Sign out
-            </button>
-        </form>
+        <Suspense fallback={<p>Loading...</p>}>
+            <form action={logout} >
+                <button className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+                    Sign out
+                </button>
+            </form>
+        </Suspense>
     );
 }

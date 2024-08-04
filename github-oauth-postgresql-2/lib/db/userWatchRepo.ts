@@ -32,12 +32,18 @@ export default class UserWatchRepoService {
     }
 
     async list() {
-        const result = await db.select().from(userWatchRepoTable);
+        const result = await db.select().from(userWatchRepoTable).orderBy(userWatchRepoTable.repoName) // Add this line to sort by repoUrl
+            .execute();
         return result;
     }
 
     async listByUserId(userId: string) {
-        const result = await db.select().from(userWatchRepoTable).where(eq(userWatchRepoTable.userId, userId)).execute();;
+        const result = await db
+            .select()
+            .from(userWatchRepoTable)
+            .where(eq(userWatchRepoTable.userId, userId))
+            .orderBy(userWatchRepoTable.repoName) // Add this line to sort by repoUrl
+            .execute();
         return result;
     }
     async deleteAllByUserId(userId: string) {

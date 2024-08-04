@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import NewRepoToWatchForm from './form'
 import UserWatchRepoItemComponent from './item'
 
@@ -7,13 +8,15 @@ const RepoList = ({ repos }: any) => {
 
     return (
         <>
-            <NewRepoToWatchForm />
-            <hr className="my-4" />
-            <div>
-                {repos.map((repo: any) => (
-                    <UserWatchRepoItemComponent key={repo.url} item={repo} />
-                ))}
-            </div>
+            <Suspense fallback={<p>Loading data...</p>}>
+                <NewRepoToWatchForm />
+                <hr className="my-4" />
+                <div>
+                    {repos.map((repo: any) => (
+                        <UserWatchRepoItemComponent key={repo.url} item={repo} />
+                    ))}
+                </div>
+            </Suspense>
         </>
     )
 }

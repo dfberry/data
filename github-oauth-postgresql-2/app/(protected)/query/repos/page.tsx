@@ -3,6 +3,7 @@ import { getDbTokenByDbUserId } from "@/lib/db/db";
 import GitHubRepoIssues, { FetchIssuesParams, GitHubIssue } from "@/lib/github/repos";
 import IssueCard from "@/components/github/Issue";
 import { getLastDaysRange } from '@/lib/datetime';
+import { Suspense } from "react";
 
 export default async function QueryReposPage() {
 
@@ -42,15 +43,27 @@ export default async function QueryReposPage() {
 	const items = await GitHubRepoIssues.fetchIssues(params, accessToken);
 
 	//console.log("QueryPage: Items", items);
+	if (!items || (Array.isArray(items) && items.length === 0)) {
+		console.log("QueryPage: No items");
+		return (
+			<>
+				<h1 className="text-2xl font-bold mb-4">{params.repo}</h1>
+				<p className="container mx-auto p-4 bg-white shadow-md rounded-lg">No issues</p>
+			</>
+		);
+	}
 
 	return (
 		<>
-			<h1>{params.repo}</h1>
-			<div className="container mx-auto p-4">
-				{items.map((issue) => (
-					<IssueCard key={issue.id} issue={issue} showRepoNameEachRow={false} />
-				))}
-			</div>
+			<Suspense fallback={<p>Loading data...</p>}>
+				<h1 className="text-2xl font-bold mb-4">{params.repo}</h1>
+				<div className="container mx-auto p-4 bg-white shadow-md rounded-lg">
+					{items.map((issue) => (
+						<IssueCard key={issue.id} issue={issue} showRepoNameEachRow={false} />
+					))}
+				</div>
+			</Suspense>
 		</>
+
 	);
 }

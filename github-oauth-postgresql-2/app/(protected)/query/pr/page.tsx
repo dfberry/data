@@ -1,3 +1,4 @@
+import React, { Suspense } from 'react';
 import useRequireAuth from "@/hooks/useRequireAuth";
 import { getDbTokenByDbUserId } from "@/lib/db/db";
 import GitHubPrsService, { GitHubPullRequest, GitHubPrSearchParams, GitHubSearchDefaultQuery } from "@/lib/github/prs";
@@ -9,10 +10,10 @@ export default async function QueryPrPage() {
 
 	const { user, session, isAuthorized } = await useRequireAuth();
 	if (!session || !isAuthorized) {
-		console.log("ProfilePage: Not authorized");
+		console.log("QueryPrPage: Not authorized");
 		return null;
 	} else {
-		console.log("ProfilePage: Authorized");
+		console.log("QueryPrPage: Authorized");
 	}
 	const searchParams = {
 		author: 'diberry',
@@ -21,25 +22,32 @@ export default async function QueryPrPage() {
 	const accessToken = await getDbTokenByDbUserId(session?.userId);
 
 	if (!accessToken) {
-		console.log("QueryPage: No access token");
+		console.log("QueryPrPage: No access token");
 		return null;
 	}
 
 	const items = await GitHubPrsService.queryPrs(accessToken, searchParams);
 
-	if (!items) {
-		console.log("QueryPage: No items");
-		return null;
+	if (!items || (Array.isArray(items) && items.length === 0)) {
+		console.log("QueryPrPage: No items");
+		return (
+			<>
+				<h1 className="text-2xl font-bold mb-4">Issues</h1>
+				<p className="container mx-auto p-4 bg-white shadow-md rounded-lg">No issues</p>
+			</>
+		);
 	}
 
 	return (
 		<>
-			<h1>PRs: {searchParams.repo}</h1>
-			<div className="container mx-auto p-4">
-				{items.map((pr: GitHubPullRequest) => (
-					<PrCard key={pr.id} pr={pr} componentOwner={searchParams.repo} />
-				))}
-			</div>
+			<Suspense fallback={<p>Loading data...</p>}>
+				<h1 className="text-2xl font-bold mb-4">PRs: {searchParams.repo}</h1>
+				<div className="container mx-auto p-4 bg-white shadow-md rounded-lg">
+					{items.map((pr: GitHubPullRequest) => (
+						<PrCard key={pr.id} pr={pr} componentOwner={searchParams.repo} />
+					))}
+				</div>
+			</Suspense>
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { GitHubPullRequest } from '@/lib/github/prs'; // Adjust the import path as necessary
 
 interface PrCardProps {
@@ -37,29 +37,31 @@ const PrCard: React.FC<PrCardProps> = ({ pr, componentOwner }) => {
                 </p>
             </section>
             <footer className="flex flex-wrap items-center justify-between">
-                <div className="flex items-center space-x-2">
-                    {pr.labels.map(label => (
-                        <span
-                            key={label.id}
-                            className="px-2 py-1 text-xs font-semibold rounded"
-                            style={{ backgroundColor: `#${label.color}`, color: '#fff' }}
-                        >
-                            {label.name}
-                        </span>
-                    ))}
-                </div>
-                <div className="text-sm text-gray-500 text-right flex flex-col space-y-2">
-                    <div>
-                        <h3 className="font-bold">Opened</h3>
-                        <p>{new Date(pr.created_at).toLocaleDateString()}</p>
-                        <p>{pr.user.login}</p>
+                <Suspense fallback={<p>Loading...</p>}>
+                    <div className="flex items-center space-x-2">
+                        {pr.labels.map(label => (
+                            <span
+                                key={label.id}
+                                className="px-2 py-1 text-xs font-semibold rounded"
+                                style={{ backgroundColor: `#${label.color}`, color: '#fff' }}
+                            >
+                                {label.name}
+                            </span>
+                        ))}
                     </div>
-                    <div>
-                        <h3 className="font-bold">Updated</h3>
-                        <p>{new Date(pr.updated_at).toLocaleDateString()}</p>
-                        <p>{pr.assignee ? pr.assignee.login : 'N/A'}</p>
+                    <div className="text-sm text-gray-500 text-right flex flex-col space-y-2">
+                        <div>
+                            <h3 className="font-bold">Opened</h3>
+                            <p>{new Date(pr.created_at).toLocaleDateString()}</p>
+                            <p>{pr.user.login}</p>
+                        </div>
+                        <div>
+                            <h3 className="font-bold">Updated</h3>
+                            <p>{new Date(pr.updated_at).toLocaleDateString()}</p>
+                            <p>{pr.assignee ? pr.assignee.login : 'N/A'}</p>
+                        </div>
                     </div>
-                </div>
+                </Suspense>
             </footer>
             {componentOwner == undefined && <div className="mt-4 pt-4 border-t border-gray-200">
                 <p className="text-sm text-gray-500">

@@ -1,6 +1,7 @@
 import useRequireAuth from '@/hooks/useRequireAuth';
 import ProfileComponent from '@/components/Profile';
 import GitHubUserService from '@/lib/github/user';
+import { Suspense } from 'react';
 
 export default async function ProfilePage() {
 
@@ -19,7 +20,9 @@ export default async function ProfilePage() {
 
 	return (
 		<>
-			<ProfileComponent session={session} user={user} githubProfile={userProfile} />
+			<Suspense fallback={<p>Loading data...</p>}>
+				<ProfileComponent session={session} user={user} githubProfile={userProfile} />
+			</Suspense>
 		</>
 	);
 }

@@ -2,6 +2,7 @@ import useRequireAuth from '@/hooks/useRequireAuth';
 import WatchedReposListComponent from '@/components/userWatchRepos/list';
 import UserWatchRepoService from '@/lib/db/userWatchRepo';
 import NewRepoToWatchForm from '@/components/userWatchRepos/form';
+import { Suspense } from 'react';
 
 const getData = async (userId: string) => {
 
@@ -28,7 +29,9 @@ export default async function RepoListPage() {
 	return (
 		<>
 			<h1>Watched Repositories</h1>
-			<WatchedReposListComponent user={user} session={session} repos={repos} />
+			<Suspense fallback={<p>Loading data...</p>}>
+				<WatchedReposListComponent user={user} session={session} repos={repos} />
+			</Suspense>
 		</>
 	);
 }

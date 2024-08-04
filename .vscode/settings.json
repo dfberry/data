@@ -7,7 +7,7 @@
     "files.autoSave": "onFocusChange", // optional but recommended
     "vs-code-prettier-eslint.prettierLast": false,
     "[typescript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features"
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
     "azureFunctions.deploySubpath": "originals",
     "azureFunctions.postDeployTask": "npm install (functions)",
@@ -22,5 +22,7 @@
     },
     "[typescriptreact]": {
       "editor.defaultFormatter": "vscode.typescript-language-features"
-    } // set as "true" to run 'prettier' last not first
+    },
+    {
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
   }
