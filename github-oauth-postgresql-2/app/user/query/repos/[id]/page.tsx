@@ -4,8 +4,15 @@ import GitHubRepoIssues, { FetchIssuesParams, GitHubIssue } from "@/lib/github/r
 import IssueCard from "@/components/github/Issue";
 import { getLastDaysRange } from '@/lib/datetime';
 import { Suspense } from "react";
+import UserWatchRepoService from "@/lib/db/userWatchRepo";
 
-export default async function QueryReposPage() {
+type QueryReposPageProps = {
+	params: {
+		id: string;
+	};
+};
+
+export default async function QueryReposPage({ params }: QueryReposPageProps) {
 
 	console.log("QueryPage: Start");
 
@@ -22,16 +29,25 @@ export default async function QueryReposPage() {
 		console.log("QueryPage: No access token");
 		return null;
 	}
+
+	const repoFromDb = await UserWatchRepoService.read(params.id);
+
+	if (!repoFromDb || repoFromDb.length === 0) {
+		throw new Error("Repo not found");
+	}
+	const repo = repoFromDb[0].repoName;
+	console.log("QueryReposPage: repoFromDb", repoFromDb[0]);
+
 	const last30Days = getLastDaysRange();
 
-	const params: FetchIssuesParams = {
-		repo: 'MicrosoftDocs/node-essentials',
+	const fetchIssuesParams: FetchIssuesParams = {
+		repo: repo,
 		dateRange:
 		{
 			start: last30Days.startDateTime!,
 			end: last30Days.endDateTime!
 		},
-		// state: 'open',
+		state: 'open',
 		// labels: ['bug', 'enhancement'],
 		// assignee: 'diberry',
 		// creator: 'diberry',
@@ -40,14 +56,14 @@ export default async function QueryReposPage() {
 		// direction: 'asc'
 	};
 
-	const items = await GitHubRepoIssues.fetchIssues(params, accessToken);
+	const items = await GitHubRepoIssues.fetchIssues(fetchIssuesParams, accessToken);
 
 	//console.log("QueryPage: Items", items);
 	if (!items || (Array.isArray(items) && items.length === 0)) {
 		console.log("QueryPage: No items");
 		return (
 			<>
-				<h1 className="text-2xl font-bold mb-4">{params.repo}</h1>
+				<h1 className="text-2xl font-bold mb-4">{fetchIssuesParams.repo}</h1>
 				<p className="container mx-auto p-4 bg-white shadow-md rounded-lg">No issues</p>
 			</>
 		);
@@ -56,7 +72,7 @@ export default async function QueryReposPage() {
 	return (
 		<>
 			<Suspense fallback={<p>Loading data...</p>}>
-				<h1 className="text-2xl font-bold mb-4">{params.repo}</h1>
+				<h1 className="text-2xl font-bold mb-4">{fetchIssuesParams.repo}</h1>
 				<div className="container mx-auto p-4 bg-white shadow-md rounded-lg">
 					{items.map((issue) => (
 						<IssueCard key={issue.id} issue={issue} showRepoNameEachRow={false} />

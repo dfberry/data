@@ -6,8 +6,7 @@ import { Suspense } from 'react';
 
 const getData = async (userId: string) => {
 
-	const service = new UserWatchRepoService();
-	const userWatchRepos = await service.listByUserId(userId);
+	const userWatchRepos = await UserWatchRepoService.listByUserId(userId);
 
 	console.log(userWatchRepos);
 	return userWatchRepos;
@@ -15,7 +14,7 @@ const getData = async (userId: string) => {
 
 export default async function RepoListPage() {
 
-	console.log("RepoListPage: Start");
+	//console.log("RepoListPage: Start");
 
 	const { user, session, isAuthorized } = await useRequireAuth();
 	if (!isAuthorized) {
@@ -30,7 +29,7 @@ export default async function RepoListPage() {
 		<>
 			<h1>Watched Repositories</h1>
 			<Suspense fallback={<p>Loading data...</p>}>
-				<WatchedReposListComponent user={user} session={session} repos={repos} />
+				<WatchedReposListComponent user={user} session={session} repos={repos} enableCreate={true} enableDelete={true} enableReportLink={false} />
 			</Suspense>
 		</>
 	);

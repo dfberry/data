@@ -16,7 +16,7 @@ export default async function ProfilePage() {
 	}
 
 	const userProfile = await GitHubUserService.getGithHubUserBySessionResult({ session, user });
-	console.log(`ProfilePage userProfile: ${JSON.stringify(userProfile)}`);
+	//console.log(`ProfilePage userProfile: ${JSON.stringify(userProfile)}`);
 
 	return (
 		<>

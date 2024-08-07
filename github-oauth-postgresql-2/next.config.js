@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-    images: {
+  output: "standalone",
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com'
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
       },
     ],
   },

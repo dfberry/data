@@ -1,37 +1,41 @@
-'use server'
-import UserWatchRepoService from '@/lib/db/userWatchRepo';
-import { revalidatePath } from 'next/cache'
-import useRequireAuth from '@/hooks/useRequireAuth';
+"use server";
+import UserWatchRepoService from "@/lib/db/userWatchRepo";
+import GitHubRepoService from "@/lib/github/repo";
+import { getDbTokenByDbUserId } from "@/lib/db/db";
+import { revalidatePath } from "next/cache";
+import useRequireAuth from "@/hooks/useRequireAuth";
 
-export const createNewRepoToWatch = async (data: FormData) => {
+export const createNewRepoToWatch = async (newRepo: string) => {
+  const { user, session, isAuthorized } = await useRequireAuth();
 
-    const { user, session, isAuthorized } = await useRequireAuth();
+  if (!isAuthorized || !session) {
+    console.log("createNewRepoToWatch: Not authorized");
+    return null;
+  } else {
+    console.log("createNewRepoToWatch: Authorized");
+  }
+  const service = new UserWatchRepoService();
 
-    if (!isAuthorized || !session) {
-        console.log("newRepoToWatch: Not authorized");
-        return null;
-    } else {
-        console.log("newRepoToWatch: Authorized");
-    }
-    const service = new UserWatchRepoService();
+  if (!newRepo || newRepo === "") {
+    console.log("createNewRepoToWatch: newRepo is empty");
+    return null;
+  } else {
+    //console.log("newRepoToWatch: ", newRepo);
+  }
+  const accessToken = await getDbTokenByDbUserId(session?.userId);
 
-    const newRepo = data.get('repo') as string
-    if (!newRepo || newRepo === '') {
-        console.log("newRepoToWatch: newRepo is empty");
-        return null;
-    } else {
-        console.log("newRepoToWatch: ", newRepo);
-    }
+  // verify db exists
+  const repo = await GitHubRepoService.repoInfo(accessToken!, newRepo);
+  if (!repo) {
+    console.log("createNewRepoToWatch: Repo not found");
+    throw new Error("Repo not found");
+  }
 
-
-    await service.create(
-        session?.userId,
-        newRepo
-    )
-    revalidatePath('/todos')
-}
+  // add repo to db
+  await UserWatchRepoService.create(session?.userId, newRepo);
+  revalidatePath("/todos");
+};
 export const deleteRepoToWatch = async (id: string) => {
-    const service = new UserWatchRepoService();
-    await service.delete(id)
-    revalidatePath('/todos')
-}
+  await UserWatchRepoService.delete(id);
+  revalidatePath("/todos");
+};

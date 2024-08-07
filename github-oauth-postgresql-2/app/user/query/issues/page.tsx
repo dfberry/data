@@ -35,7 +35,7 @@ export default async function QueryIssuesPage() {
 
 
 	const { items } = await GitHubIssuesService.queryIssues(accessToken, searchParams);
-	console.log(`QueryIssuesPage: items`, items);
+	//console.log(`QueryIssuesPage: items`, items);
 
 	if (!items || (Array.isArray(items) && items.length === 0)) {
 		console.log("QueryIssuesPage: No items");

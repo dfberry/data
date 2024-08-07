@@ -139,7 +139,7 @@ export async function githubAuthenticationCallback(
       return new Response(null, {
         status: 302,
         headers: {
-          Location: "/settings",
+          Location: "/user/settings",
         },
       });
     }
@@ -158,7 +158,7 @@ export async function githubAuthenticationCallback(
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/settings",
+        Location: "/user/settings",
       },
     });
   } catch (e) {
