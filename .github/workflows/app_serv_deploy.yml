@@ -21,6 +21,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
+          cache-dependency-path: './${{ env.REPO_DIR }}/package-lock.json'
 
       - name: npm install and build
         run: |
