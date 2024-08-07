@@ -8,6 +8,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: github-source-board
+  REPO_DIR: github-oauth-postgresql-2
 
 jobs:
   build:
@@ -20,17 +21,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "yarn"
+          cache: "npm"
 
       - name: yarn install and build
         run: |
-          cd github-oauth-postgresql-2
-          yarn install --frozen-lockfile
-          yarn build
+          cd ${{ env.REPO_DIR }}
+          npm run build
 
       - name: Copy static files
         run: |
-          cd github-oauth-postgresql-2
+          cd ${{ env.REPO_DIR }}
           cp -R ./public ./.next/standalone/public
           cp -R ./.next/static ./.next/standalone/.next/static
 
@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: ./github-oauth-postgresql-2/.next/standalone
+          path: ./ ${{ env.REPO_DIR }}/.next/standalone
 
   deploy:
     runs-on: ubuntu-latest
