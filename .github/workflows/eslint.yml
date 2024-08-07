@@ -18,6 +18,9 @@ on:
   schedule:
     - cron: '28 21 * * 3'
 
+env:
+  REPO_DIR: github-oauth-postgresql-2
+
 jobs:
   eslint:
     name: Run eslint scanning
@@ -32,19 +35,18 @@ jobs:
 
       - name: Install ESLint
         run: |
+          cd ${{ env.REPO_DIR }}
           npm install eslint@8.10.0
           npm install @microsoft/eslint-formatter-sarif@2.1.7
 
       - name: Run ESLint
-        run: npx eslint .
-          --config .eslintrc.js
-          --ext .js,.jsx,.ts,.tsx
-          --format @microsoft/eslint-formatter-sarif
-          --output-file eslint-results.sarif
+        run: |
+          cd ${{ env.REPO_DIR }}
+          npm run gha:eslint 
         continue-on-error: true
 
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: eslint-results.sarif
+          sarif_file: ${{ env.REPO_DIR }}/eslint-results.sarif
           wait-for-processing: true

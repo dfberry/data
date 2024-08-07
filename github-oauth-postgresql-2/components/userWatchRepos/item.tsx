@@ -1,6 +1,6 @@
 'use client'
 import { Suspense, useTransition } from 'react'
-import { deleteRepoToWatch } from '@/actions/userWatchRepo'
+import { DeleteRepoToWatch } from '@/actions/userWatchRepo'
 import Link from 'next/link'
 type Props = {
     item: any;
@@ -37,7 +37,7 @@ const UserWatchRepoItemComponent = ({ item, enableDelete, enableReportLink }: Pr
                             disabled={isPending}
                             onClick={(e) => {
                                 e.stopPropagation(); // Prevents the click from triggering on the parent div
-                                startTransition(() => deleteRepoToWatch(item.id));
+                                startTransition(() => DeleteRepoToWatch(item.id));
                             }}
                         >
                             Delete

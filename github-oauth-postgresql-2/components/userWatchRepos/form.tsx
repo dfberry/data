@@ -1,6 +1,6 @@
 'use client'
 
-import { createNewRepoToWatch } from "@/actions/userWatchRepo";
+import { CreateNewRepoToWatch } from "@/actions/userWatchRepo";
 import { useState, useRef, Suspense } from "react";
 import { z } from "zod";
 
@@ -60,7 +60,7 @@ const NewRepoToWatchForm = () => {
         }
 
         try {
-            await createNewRepoToWatch(orgRepo);
+            await CreateNewRepoToWatch(orgRepo);
             formRef?.current?.reset();
         } catch (e) {
             console.log("action error", e);

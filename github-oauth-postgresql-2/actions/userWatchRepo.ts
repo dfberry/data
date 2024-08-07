@@ -5,7 +5,7 @@ import { getDbTokenByDbUserId } from "@/lib/db/db";
 import { revalidatePath } from "next/cache";
 import useRequireAuth from "@/hooks/useRequireAuth";
 
-export const createNewRepoToWatch = async (newRepo: string) => {
+export const CreateNewRepoToWatch = async (newRepo: string) => {
   const { user, session, isAuthorized } = await useRequireAuth();
 
   if (!isAuthorized || !session) {
@@ -35,7 +35,7 @@ export const createNewRepoToWatch = async (newRepo: string) => {
   await UserWatchRepoService.create(session?.userId, newRepo);
   revalidatePath("/todos");
 };
-export const deleteRepoToWatch = async (id: string) => {
+export const DeleteRepoToWatch = async (id: string) => {
   await UserWatchRepoService.delete(id);
   revalidatePath("/todos");
 };
