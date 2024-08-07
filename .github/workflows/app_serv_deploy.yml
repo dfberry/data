@@ -30,16 +30,18 @@ jobs:
           npm ci
           npm run build
 
-      - name: Copy static files
+      - name: Remove node_modules if it exists
         run: |
           cd ${{ env.REPO_DIR }}
-          cp -R ./.next/static ./.next/standalone/.next/static
+          if [ -d "node_modules" ]; then
+            rm -rf node_modules
+          fi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: ./${{ env.REPO_DIR }}/.next/standalone
+          path: ./${{ env.REPO_DIR }}
 
   deploy:
     runs-on: ubuntu-latest
