@@ -10,6 +10,7 @@ env:
   AZURE_WEBAPP_NAME: github-source-board
   REPO_DIR: github-oauth-postgresql-2
   RESOURCE_GROUP_NAME: github-source-board
+  FILE_NAME: ${{ github.ref_name }}-${{ github.run_id }}
 
 jobs:
   build:
@@ -42,27 +43,27 @@ jobs:
       - name: Deploy
         shell: pwsh
         run: |
-            cd ${{ env.REPO_DIR }}
-            $ZIP_FILE_NAME = "./${FILE_NAME}.zip"
-            zip $ZIP_FILE_NAME ./* .next -qr
+          cd $env:REPO_DIR
+          $ZIP_FILE_NAME = "./${{ env.FILE_NAME }}.zip"
+          zip $ZIP_FILE_NAME ./* .next -qr
 
-            az webapp deploy `
-                --resource-group $RESOURCE_GROUP_NAME `
-                --name $WEB_APP_NAME `
-                --src-path $ZIP_FILE_NAME `
-                --slot staging `
-                --type zip `
-                --clean true
+          az webapp deploy `
+            --resource-group $env:RESOURCE_GROUP_NAME `
+            --name $env:WEB_APP_NAME `
+            --src-path $ZIP_FILE_NAME `
+            --slot staging `
+            --type zip `
+            --clean true
         env:
-            FILE_NAME: "${{ github.ref_name }}-${{ github.run_id }}"
-            RESOURCE_GROUP_NAME: {{ env.RESOURCE_GROUP_NAME }}
-            WEB_APP_NAME: {{ env.AZURE_WEBAPP_NAME}}
+          FILE_NAME: "${{ env.FILE_NAME }}"
+          RESOURCE_GROUP_NAME: ${{ env.RESOURCE_GROUP_NAME }}
+          WEB_APP_NAME: ${{ env.AZURE_WEBAPP_NAME }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: app
-          path: "./${{ env.REPO_DIR }}/${FILE_NAME}.zip"
+          path: "./${{ env.REPO_DIR }}/${{ env.FILE_NAME }}.zip"
 
   # deploy:
   #   runs-on: ubuntu-latest
