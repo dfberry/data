@@ -6,3 +6,4 @@ node_modules
 **/.temp/**
 **/*.PublishSettings
 **/*.publishProfile.xml
+**/service.principal.json
