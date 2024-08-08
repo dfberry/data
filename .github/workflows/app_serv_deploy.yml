@@ -58,7 +58,6 @@ jobs:
       #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       #     auth-type: service-principal
 
-
       - name: Deploy
         shell: pwsh
         run: |
