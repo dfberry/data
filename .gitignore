@@ -7,3 +7,5 @@ node_modules
 **/*.PublishSettings
 **/*.publishProfile.xml
 **/service.principal.json
+**/secrets.json
+**/credential.json
