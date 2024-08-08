@@ -8,3 +8,4 @@ node_modules
 **/*.publishProfile.xml
 **/service.principal.json
 **/secrets.json
+**/credential.json
