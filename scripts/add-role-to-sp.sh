@@ -10,4 +10,4 @@ RESOURCE_GROUP_NAME="your-resource-group-name"
 SCOPE="/subscriptions/your-subscription-id/resourceGroups/your-resource-group-name"
 
 # Add role to service principal
-az role assignment create --assignee "$SERVICE_PRINCIPAL_ID" --role "$ROLE" --scope "$SCOPE"
+az role assignment create --assignee "$SERVICE_PRINCIPAL_ID" --role "$CONTRIBUTOR_ROLE" --scope "$SCOPE"
